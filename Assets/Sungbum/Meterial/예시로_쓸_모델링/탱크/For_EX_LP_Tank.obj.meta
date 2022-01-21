@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: BodyMat
-    second: {fileID: 6881516708569177910, guid: 45aa15905a21a2046aa47078c94920be, type: 3}
+    second: {fileID: 2100000, guid: 7baa521db36670d43b3f2a2df4f66bcf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: TurretMat
-    second: {fileID: 4644683792616854041, guid: 45aa15905a21a2046aa47078c94920be, type: 3}
+    second: {fileID: 2100000, guid: add0201233c9fde4d8dcb6f7314724b0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
