@@ -22,10 +22,14 @@ public class SetGun : MonoBehaviour
         public int Ammo { get; set; }
     }
 
-    private string[] GunName; 
+    [SerializeField]
+    private string[] GunName;
 
     [SerializeField]
-    private GameObject AmmoType;
+    private int GunNum;
+
+    public GameObject AmmoType;
+    public GameObject BulletZip;
 
     // Start is called before the first frame update
     void Start()
@@ -43,9 +47,9 @@ public class SetGun : MonoBehaviour
     {
         int SecondIdx = 1;
 
-        string[] GunName = gameObject.name.Split('_');
+        GunName = gameObject.name.Split('_');
 
-        int GunNum = int.Parse(GunName[SecondIdx]);
+        GunNum = int.Parse(GunName[SecondIdx]);
 
         switch (GunNum)
         {

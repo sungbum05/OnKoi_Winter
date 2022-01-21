@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gray8
-    second: {fileID: 6156539078805630820, guid: 494aee24d7d61ad4f9de26900e918d08, type: 3}
+    second: {instanceID: 0}
   materials:
     materialImportMode: 2
     materialName: 0
