@@ -23,16 +23,13 @@ public class Pistol : SetGun
 
     protected override void SetPistol()
     {
-        Debug.Log("Pistol");
-        
-        GunState PistolGun = new GunState();
+        Damege = 20.0f;
+        RateFire = 0.5f;
+        BulletSpread = 3.0f;
+        BulletSpeed = 120.0f;
+        HeatCapacity = 50.0f;
 
-        PistolGun.Damege = 20.0f;
-        PistolGun.RateFire = 0.5f;
-        PistolGun.BulletSpread = 3.0f;
-        PistolGun.HeatCapacity = 50.0f;
-
-        PistolGun.Ammo = 15;
+        Ammo = 15;
     }
 
     void FireGun()
@@ -42,8 +39,9 @@ public class Pistol : SetGun
             GameObject Bullet = Instantiate(AmmoType);
             Bullet.transform.parent = BulletZip.transform;
             Bullet.transform.localScale = new Vector3(1, 1, 1);
-            Bullet.transform.localPosition = new Vector3(Bullet.transform.position.x,
-                this.transform.localPosition.y, Bullet.transform.position.z);
+            Bullet.transform.position = new Vector3(this.transform.position.x,
+                this.transform.position.y, this.transform.position.z);
+            Bullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * BulletSpeed, ForceMode.Impulse);
         }
     }
 }

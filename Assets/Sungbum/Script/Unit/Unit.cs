@@ -9,6 +9,9 @@ public class Unit : MonoBehaviour
     public float Hp { get; set; }
     public float Shield { get; set; }
 
+    public float CurExp { get; set; }
+    public float MaxExp { get; set; }
+
 
     // Start is called before the first frame update
     void Start()

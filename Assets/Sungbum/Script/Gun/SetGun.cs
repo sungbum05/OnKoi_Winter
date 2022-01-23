@@ -12,15 +12,13 @@ public class SetGun : MonoBehaviour
         MiniGun = 3,
     }
 
-    public struct GunState
-    {
-        public float Damege { get; set; }
-        public float RateFire { get; set; }
-        public float BulletSpread { get; set; }
-        public float HeatCapacity { get; set; }
+    public float Damege { get; set; }
+    public float RateFire { get; set; }
+    public float BulletSpread { get; set; }
+    public float BulletSpeed { get; set; }
+    public float HeatCapacity { get; set; }
 
-        public int Ammo { get; set; }
-    }
+    public int Ammo { get; set; }
 
     [SerializeField]
     private string[] GunName;
