@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerContorller : Unit
 {
@@ -31,6 +32,9 @@ public class PlayerContorller : Unit
     {
         Hp = 150;
         Shield = 100;
+
+        CurExp = 0;
+        MaxExp = 100;
 
         MoveSpeed = 7;
     }
