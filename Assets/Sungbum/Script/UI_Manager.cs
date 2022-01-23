@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class UI_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateSet();
+        GoGameOver();
     }
 
     void StartSet()
@@ -41,7 +43,7 @@ public class UI_Manager : MonoBehaviour
         ShieldBar.maxValue = Player.GetComponent<PlayerContorller>().Shield;
         ShieldBar.value = Player.GetComponent<PlayerContorller>().Shield;
 
-        Hp.text = $"Shield: {Player.GetComponent<PlayerContorller>().Hp}";
+        Hp.text = $"Hp: {Player.GetComponent<PlayerContorller>().Hp}";
         HpBar.maxValue = Player.GetComponent<PlayerContorller>().Hp;
         HpBar.value = Player.GetComponent<PlayerContorller>().Hp;
 
@@ -50,5 +52,32 @@ public class UI_Manager : MonoBehaviour
 
         ExpBar.maxValue = Player.GetComponent<PlayerContorller>().MaxExp;
         ExpBar.value = Player.GetComponent<PlayerContorller>().CurExp;
+    }
+
+    void UpdateSet()
+    {
+        Shield.text = $"Shield: {Player.GetComponent<PlayerContorller>().Shield}";
+        ShieldBar.value = Player.GetComponent<PlayerContorller>().Shield;
+
+        Hp.text = $"Hp: {Player.GetComponent<PlayerContorller>().Hp}";
+        HpBar.value = Player.GetComponent<PlayerContorller>().Hp;
+
+        ScoreTxt.text = $"Score: {Score}";
+
+        ExpBar.maxValue = Player.GetComponent<PlayerContorller>().MaxExp;
+        ExpBar.value = Player.GetComponent<PlayerContorller>().CurExp;
+    }
+
+    void GoGameOver()
+    {
+        if(Player == null)
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+    }
+
+    public void AddScore()
+    {
+        Score += 150;
     }
 }

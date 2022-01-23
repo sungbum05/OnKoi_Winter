@@ -2,24 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerContorller : Unit
 {
     // Start is called before the first frame update
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     private void Awake()
     {
         SetState();
     }
-
-    void Start()
-    {
-
-    }
-
-    //private void FixedUpdate()
-    //{
-    //    RotateToMouseDir();
-    //}
 
     // Update is called once per frame
     void Update()
@@ -65,6 +61,33 @@ public class PlayerContorller : Unit
 
             transform.LookAt(new Vector3(pointTolook.x, transform.position.y, pointTolook.z));
 
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("Ride"))
+        {
+            Ride();
+        }
+    }
+
+    void Ride()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+
+        }
+    }
+
+    public void LevelUp()
+    {
+        CurExp++;
+
+        if (MaxExp <= CurExp)
+        {
+            CurExp = 0;
+            MaxExp += 50;
         }
     }
 }

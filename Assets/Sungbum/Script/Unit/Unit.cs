@@ -27,7 +27,7 @@ public class Unit : MonoBehaviour
 
     public virtual void OnHit(float Damege)
     {
-        if(Shield >= 0)
+        if(Shield > 0)
         {
             Shield -= Damege;
         }
@@ -37,7 +37,7 @@ public class Unit : MonoBehaviour
             Hp -= Damege;
         }
 
-        if(Hp <= 0)
+        if(Hp < 0)
         {
             Destroy(this.gameObject);
         }

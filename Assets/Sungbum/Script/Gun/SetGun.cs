@@ -26,6 +26,9 @@ public class SetGun : MonoBehaviour
     [SerializeField]
     private int GunNum;
 
+    [SerializeField]
+    protected GameObject GunParticle;
+
     public GameObject AmmoType;
     public GameObject BulletZip;
 
@@ -66,6 +69,14 @@ public class SetGun : MonoBehaviour
             case (int)GunType.MiniGun:
                 SetMiniGun();
                 break;
+        }
+    }
+
+    protected void RateAttackDel()
+    {
+        if (RateFire >= 0)
+        {
+            RateFire -= Time.deltaTime;
         }
     }
 

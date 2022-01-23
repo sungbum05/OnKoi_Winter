@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LevelUp : MonoBehaviour
 {
     public GameObject Player;
-    Unit.
+    //Unit.
     
     public void StatChang()
     {
