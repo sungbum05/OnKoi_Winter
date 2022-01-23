@@ -21,7 +21,7 @@ public class TitleScript : MonoBehaviour
     public void StartGame()
     {
         //Ω√¿€ æ¿ ¿Ãµø
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene(1);
     }
 
     public void CloseGame()
