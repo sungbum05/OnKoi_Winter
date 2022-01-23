@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 
 
-public class Stop_temp : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
    
 }
