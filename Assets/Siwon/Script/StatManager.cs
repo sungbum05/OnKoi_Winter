@@ -13,7 +13,7 @@ public class StatManager : MonoBehaviour
     //Ω∫≈»√ﬂ∞°
     public void ApplyStat(StatInfo statInfo)
     {
-        statInfo.
+        
     }
     public List<StatInfo> RandomStat(int Count)//Count
     {
