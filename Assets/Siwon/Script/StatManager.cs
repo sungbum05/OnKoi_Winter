@@ -18,18 +18,52 @@ public class StatManager : MonoBehaviour
     {
         foreach (var stat in statInfo.statValues)
         {
-            switch (stat.statType)
+            switch (stat.statOperator)
             {
-                case StatType.MoveSpeed:
-                    unit.MoveSpeed += 7;
+                case StatOperator.Plus:
+                    switch (stat.statType)
+                    {
+                        case StatType.Hp:
+                            unit.Hp += 50;
+                            break;
+                        case StatType.MoveSpeed:
+                            unit.MoveSpeed += 7;
+                            break;
+                        case StatType.Shield:
+                            unit.Shield += 10;
+                            break;
+                        
+                    }
                     break;
-                case StatType.Shield:
-                    unit.Shield += 10;
+                case StatOperator.Minus:
+                    switch (stat.statType)
+                    {
+                        case StatType.Hp:
+                            unit.Hp -= 10;
+                            break;
+                        case StatType.MoveSpeed:
+                            unit.MoveSpeed -= 4;
+                            break;
+                        case StatType.Shield:
+                            unit.Shield -= 10;
+                            break;
+                    }
                     break;
-                
+                case StatOperator.Multi:
+                    switch (stat.statType)
+                    {
+                        case StatType.Hp:
+                            unit.Hp *= 1.2f;
+                            break;
+                        case StatType.MoveSpeed:
+                            unit.MoveSpeed *= 1.5f;
+                            break;
+                        case StatType.Shield:
+                            unit.Shield *= 1.2f;
+                            break;
+                    }
+                    break;
             }
-
-
         }
     }
     public List<StatInfo> RandomStat(int Count)//Count
@@ -37,7 +71,8 @@ public class StatManager : MonoBehaviour
         List<StatInfo> temp = new List<StatInfo>();
         for (int i = 0; i < Count; i++)
         {
-            temp.Add(allStatInfos[Random.Range(0, allStatInfos.Count)]);//스탯을 추가 하는데 리스트 인덱스를 랜덤으로 해서 랜덤으로 뽑는다
+            //스탯을 추가 하는데 리스트 인덱스를 랜덤으로 해서 랜덤으로 뽑는다
+            temp.Add(allStatInfos[Random.Range(0, allStatInfos.Count)]);
         }
         return temp;
     }
