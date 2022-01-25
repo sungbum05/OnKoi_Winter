@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatManager : MonoBehaviour
 {
+    Unit unit;
+
     public static StatManager Instance { get; private set; } = null;//Ω∫≈»¿ª ∫Òøˆ¡‹
     void Awake()
     {
@@ -13,7 +16,21 @@ public class StatManager : MonoBehaviour
     //Ω∫≈»√ﬂ∞°
     public void ApplyStat(StatInfo statInfo)
     {
-        
+        foreach (var stat in statInfo.statValues)
+        {
+            switch (stat.statType)
+            {
+                case StatType.MoveSpeed:
+                    unit.MoveSpeed += 7;
+                    break;
+                case StatType.Shield:
+                    unit.Shield += 10;
+                    break;
+                
+            }
+
+
+        }
     }
     public List<StatInfo> RandomStat(int Count)//Count
     {
@@ -21,7 +38,6 @@ public class StatManager : MonoBehaviour
         for (int i = 0; i < Count; i++)
         {
             temp.Add(allStatInfos[Random.Range(0, allStatInfos.Count)]);//Ω∫≈»¿ª √ﬂ∞° «œ¥¬µ• ∏ÆΩ∫∆Æ ¿Œµ¶Ω∫∏¶ ∑£¥˝¿∏∑Œ «ÿº≠ ∑£¥˝¿∏∑Œ ªÃ¥¬¥Ÿ
-
         }
         return temp;
     }

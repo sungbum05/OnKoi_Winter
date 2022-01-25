@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 [Serializable, CreateAssetMenu(fileName = "StatInfo", menuName = "Infos/StatInfo", order = 0)]
-public class StatInfo : ScriptableObject
+public class StatInfo 
 {
     public List<StatValue> statValues;
 
@@ -11,7 +11,7 @@ public class StatInfo : ScriptableObject
     {
         string result = default;
 
-        foreach (var stat in statValues)
+        foreach (var stat in statValues)//statValue에는 StatType, StatOperater가 있음
         {
             result += stat.statType switch
             {
