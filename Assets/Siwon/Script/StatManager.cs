@@ -21,6 +21,12 @@ public class StatManager : MonoBehaviour
             switch (stat.statOperator)
             {
                 case StatOperator.Plus:
+                    switch (stat.statsType)
+                    {
+                        case StatsType.Player:
+
+                            break;
+                    }
                     switch (stat.statType)
                     {
                         case StatType.Hp:

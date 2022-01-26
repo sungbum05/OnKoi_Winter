@@ -9,23 +9,10 @@ public class Item
 {
     //Machinedagger:±â°ü´ÜÃÑ
     //Chargerifle:µ¹°İ¼ÒÃÑ
-    public enum Gun
-    {
-        Machinedagger,
-        Shotgun,
-        Chargerifle
-    }
-    public enum Skill
-    {
+   
+    
 
-    }
-
-    struct GunType
-    {
-        public Gun gun;
-        public Skill skill;
-        public float ItemValue;
-    }
+    
 
    
 }
