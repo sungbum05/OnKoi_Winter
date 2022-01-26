@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-    [Serializable, CreateAssetMenu(fileName = "Item", menuName = "Infos/Item", order = 0)]
+[Serializable, CreateAssetMenu(fileName = "Item", menuName = "Infos/Item", order = 0)]
 public class Item
 {
-    //Machinedagger:±â°ü´ÜÃÑ
-    //Chargerifle:µ¹°Ý¼ÒÃÑ
-   
-    
 
-    
 
-   
+
+
+
+
+
+
+
 }

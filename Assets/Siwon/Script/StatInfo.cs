@@ -59,8 +59,11 @@ public enum StatsType
     Gun,
     Player
 }
+//Machinedagger:±â°ü´ÜÃÑ
+//Chargerifle:µ¹°Ý¼ÒÃÑ
 public enum GunType
 {
+    Pistol,
     Machinedagger,
     Shotgun,
     Chargerifle
@@ -75,9 +78,12 @@ public enum StatType
 }
 public enum GunStatType
 {
-    AtteckSpeed,
-    Capacity,
-    Heat
+    Damage,
+    RateFire,
+    Ammo,
+    HeatCapacity,
+    BulletSpeed,
+    BulletSpread
 }
 public enum StatOperator
 {
@@ -88,6 +94,7 @@ public enum StatOperator
 [Serializable]
 public struct StatValue
 {
+    public GunStatType gunStatType;
     public GunType gunType;
     public StatsType statsType;
     public StatType statType;

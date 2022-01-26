@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class StatInfoView : MonoBehaviour
 {
+    
     StatInfo statInfo;
     public Text Stat;
     public Button button;
     void Start()
     {
-        button.onClick.AddListener(() => { });
+        button.onClick.AddListener(() => { StatManager.Instance.ApplyStat(statInfo);});
     }
     public void SetStatinfo(StatInfo statInfo)
     {
