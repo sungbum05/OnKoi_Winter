@@ -11,7 +11,8 @@ public class StatInfoView : MonoBehaviour
     public Button button;
     void Start()
     {
-        button.onClick.AddListener(() => { StatManager.Instance.ApplyStat(statInfo);});
+        button.onClick.AddListener(() => {StatManager.Instance.ApplyStat(statInfo); });
+        Debug.Log("¾Æ");
     }
     public void SetStatinfo(StatInfo statInfo)
     {

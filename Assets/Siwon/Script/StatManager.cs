@@ -180,6 +180,7 @@ public class StatManager : MonoBehaviour
         }
         return temp;
     }
+    
 }
 
 
