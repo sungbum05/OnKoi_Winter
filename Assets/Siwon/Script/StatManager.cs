@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class StatManager : MonoBehaviour
 {
-    Unit unit;
-    SetGun setGun;
+    private Unit unit;
+    private SetGun setGun;
 
     public static StatManager Instance { get; private set; } = null;//스탯을 비워줌
     void Awake()
@@ -27,14 +27,14 @@ public class StatManager : MonoBehaviour
                         case StatOperator.Plus:
                             switch (stat.statType)
                             {
-                                case StatType.Hp:
-                                    unit.Hp += 50;
+                                case PlayerStatType.Hp:
+                                    unit.Hp += stat.value;
                                     break;
-                                case StatType.MoveSpeed:
-                                    unit.MoveSpeed += 7;
+                                case PlayerStatType.MoveSpeed:
+                                    unit.MoveSpeed += unit.MoveSpeed * stat.value / 100;
                                     break;
-                                case StatType.Shield:
-                                    unit.Shield += 10;
+                                case PlayerStatType.Shield:
+                                    unit.Shield += stat.value;
                                     break;
                             }
                             break;
@@ -42,13 +42,13 @@ public class StatManager : MonoBehaviour
                         case StatOperator.Minus:
                             switch (stat.statType)
                             {
-                                case StatType.Hp:
+                                case PlayerStatType.Hp:
                                     unit.Hp -= 10;
                                     break;
-                                case StatType.MoveSpeed:
+                                case PlayerStatType.MoveSpeed:
                                     unit.MoveSpeed -= 4;
                                     break;
-                                case StatType.Shield:
+                                case PlayerStatType.Shield:
                                     unit.Shield -= 10;
                                     break;
                             }
@@ -56,13 +56,13 @@ public class StatManager : MonoBehaviour
                         case StatOperator.Multi:
                             switch (stat.statType)
                             {
-                                case StatType.Hp:
+                                case PlayerStatType.Hp:
                                     unit.Hp *= 1.2f;
                                     break;
-                                case StatType.MoveSpeed:
+                                case PlayerStatType.MoveSpeed:
                                     unit.MoveSpeed *= 1.5f;
                                     break;
-                                case StatType.Shield:
+                                case PlayerStatType.Shield:
                                     unit.Shield *= 1.2f;
                                     break;
                             }
@@ -76,10 +76,10 @@ public class StatManager : MonoBehaviour
                             switch (stat.gunStatType)
                             {
                                 case GunStatType.Damage:
-                                    setGun.Damege += setGun.Damege / 2;//공격력 50프로 증가
+                                    setGun.Damege += setGun.Damege * stat.value / 100;//공격력 50프로 증가
                                     break;
                                 case GunStatType.Ammo:
-                                    setGun.Ammo += setGun.Ammo / 5;
+                                    setGun.Ammo += setGun.Ammo * (int)stat.value / 100;
                                     break;
                                 case GunStatType.BulletSpeed:
                                     setGun.BulletSpeed += setGun.BulletSpeed / 5;
@@ -145,7 +145,7 @@ public class StatManager : MonoBehaviour
                             switch (stat.gunStatType)
                             {
                                 case GunStatType.Damage:
-                                    setGun.Damege += setGun.Damege / 2;//공격력 50프로 증가
+                                    setGun.Damege += setGun.Damege * stat.value / 100;//공격력 50프로 증가
                                     break;
                                 case GunStatType.Ammo:
                                     setGun.Ammo += setGun.Ammo / 5;//탄창 20%증가

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 [Serializable, CreateAssetMenu(fileName = "StatInfo", menuName = "Infos/StatInfo", order = 0)]
-public class StatInfo 
+public class StatInfo : ScriptableObject
 {
     
     public List<StatValue> statValues;
@@ -17,13 +17,13 @@ public class StatInfo
             switch (stat.statsType)
             {
                 case StatsType.Player:
-                    result += "플레이어의";
+                    result += "플레이어의 ";
                     result += stat.statType switch
                     {
-                        StatType.Hp => "최대 체력이",
-                        StatType.MoveSpeed => "이동 속도가",
-                        StatType.Damage => "데미지가",
-                        StatType.Shield => "쉴드가",
+                        PlayerStatType.Hp => "최대 체력이",
+                        PlayerStatType.MoveSpeed => "이동 속도가",
+                        PlayerStatType.Damage => "데미지가",
+                        PlayerStatType.Shield => "쉴드가",
                         _ => "",
                     };
                     break;
@@ -47,15 +47,17 @@ public class StatInfo
                 StatOperator.Multi => " 배가됩니다",
                 _ => "",
             };
+            
             result += "\n";
         }
-
-        return result;
+        
+        return result.Substring(0,result.Length-1);
     }
 }
 //플레이어냐 총이냐
 public enum StatsType
 {
+    None,
     Gun,
     Player
 }
@@ -63,14 +65,16 @@ public enum StatsType
 //Chargerifle:돌격소총
 public enum GunType
 {
+    None,
     Pistol,
     Machinedagger,
     Shotgun,
     Chargerifle
 }
 
-public enum StatType
+public enum PlayerStatType
 {
+    None,
     Damage,
     MoveSpeed,
     Hp,
@@ -78,6 +82,7 @@ public enum StatType
 }
 public enum GunStatType
 {
+    None,
     Damage,
     RateFire,
     Ammo,
@@ -97,7 +102,7 @@ public struct StatValue
     public GunStatType gunStatType;
     public GunType gunType;
     public StatsType statsType;
-    public StatType statType;
+    public PlayerStatType statType;
     public StatOperator statOperator; 
     public float value;
 }
