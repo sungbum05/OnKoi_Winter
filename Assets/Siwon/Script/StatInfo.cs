@@ -33,6 +33,7 @@ public class StatInfo : ScriptableObject
                         GunType.Chargerifle => "µ¹°Ý¼ÒÃÑÀÇ",
                         GunType.Machinedagger => "±â°ü´ÜÃÑÀÇ",
                         GunType.Shotgun => "»êÅºÃÑÀÇ",
+                        GunType.Pistol => "±ÇÃÑÀÇ",
                         _ => "",
                     };
 
