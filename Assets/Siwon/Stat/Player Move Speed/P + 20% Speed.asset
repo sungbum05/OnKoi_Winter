@@ -16,6 +16,6 @@ MonoBehaviour:
   - gunStatType: 0
     gunType: 0
     statsType: 2
-    statType: 1
+    statType: 2
     statOperator: 0
     value: 20
