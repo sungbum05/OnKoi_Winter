@@ -5,15 +5,17 @@ using UnityEngine.UI;
 using System;
 
 
-public class Item
+public abstract class Item : MonoBehaviour
 {
+    public enum ItemType
+    {
 
-
-
-
-
-
-
-
-
+    }
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            
+        }
+    }
 }

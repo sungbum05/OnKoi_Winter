@@ -278,24 +278,6 @@ public class StatManager : MonoBehaviour
             }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public List<StatInfo> RandomStat(int Count)//Count
     {
         List<StatInfo> temp = new List<StatInfo>();
