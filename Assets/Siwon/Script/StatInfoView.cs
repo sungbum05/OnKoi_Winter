@@ -5,14 +5,20 @@ using UnityEngine.UI;
 
 public class StatInfoView : MonoBehaviour
 {
-    
+ 
     StatInfo statInfo;
     public Text Stat;
     public Button button;
     void Start()
     {
-        button.onClick.AddListener(() => {StatManager.Instance.ApplyStat(statInfo); });
-        Debug.Log("¾Æ");
+        button.onClick.AddListener(
+            () => 
+            { 
+                StatManager.Instance.ApplyStat(statInfo);
+                Debug.Log("½ÇÇà");
+            }
+            );
+        
     }
     public void SetStatinfo(StatInfo statInfo)
     {
