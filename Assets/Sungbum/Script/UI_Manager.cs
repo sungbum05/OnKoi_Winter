@@ -58,6 +58,7 @@ public class UI_Manager : MonoBehaviour
     {
         Shield.text = $"Shield: {Player.GetComponent<PlayerContorller>().Shield}";
         ShieldBar.value = Player.GetComponent<PlayerContorller>().Shield;
+        ShieldBar.maxValue = Player.GetComponent<PlayerContorller>().MaxShield;
 
         Hp.text = $"Hp: {Player.GetComponent<PlayerContorller>().Hp}";
         HpBar.value = Player.GetComponent<PlayerContorller>().Hp;

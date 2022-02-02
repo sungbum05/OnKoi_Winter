@@ -23,13 +23,16 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator EnemySpawn()
     {
         float Scale = Random.Range(0.8f, 2.0f);
+        int RanZ = 0, RanX = 0;
 
         GameObject Enemy = Instantiate(EnemyPrefab[0]);
 
         Enemy.transform.DOScale(new Vector3(Scale, Scale, Scale), Random.Range(0.6f, 1.0f));
 
-        Enemy.transform.position = new Vector3(this.transform.position.x + (Random.Range(-1, 1) * Random.Range(7.0f, 11.0f)), this.transform.position.y, 
-            this.transform.position.z + (Random.Range(-1, 1) * Random.Range(7.0f, 11.0f)));
+        Enemy.transform.position = new Vector3(transform.parent.position.x + ((RanX = Random.Range(0, 2) == 0 ? -1 : 1) * Random.Range(10.0f, 16.0f)), this.transform.position.y, 
+            this.transform.parent.position.z + ((RanZ = Random.Range(0, 2) == 0 ? -1 : 1) * Random.Range(10.0f, 16.0f)));
+
+        Debug.Log(Enemy.transform.position);
 
         yield return new WaitForSeconds(Random.Range(0.8f, 1.3f));
         StartCoroutine("EnemySpawn");
