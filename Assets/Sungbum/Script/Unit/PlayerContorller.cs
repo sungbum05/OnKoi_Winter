@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerContorller : Unit
 {
+    [SerializeField]
+    private GameObject StatPan;
+
     float RefillTime = 2.0f;
-    float MaxShield = 0;
+    public float MaxShield { get; set; }
     float ChargeShield = 0.2f;
 
     // Start is called before the first frame update
@@ -31,17 +34,22 @@ public class PlayerContorller : Unit
 
     void SetState()
     {
-        Hp = 150;
-        Shield = 100;
+        Hp = 100;
+        Shield = 50;
 
 
         MaxShield = Shield;
         CurExp = 0;
-        MaxExp = 100;
+        MaxExp = 1;
 
         MoveSpeed = 7;
 
         StartCoroutine("RefillShield");
+    }
+
+    public void SetLevelState()
+    {
+        Shield = MaxShield;
     }
 
     void PlayerMove()
@@ -95,8 +103,9 @@ public class PlayerContorller : Unit
 
         if (MaxExp <= CurExp)
         {
+            StatPan.SetActive(true);
             CurExp = 0;
-            MaxExp += 50;
+            MaxExp += 10;
         }
     }
 

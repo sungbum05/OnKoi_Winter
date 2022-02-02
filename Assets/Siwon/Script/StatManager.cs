@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class StatManager : MonoBehaviour
 {
-    private Unit unit;
+    [SerializeField]
+    private PlayerContorller unit;
+
     private SetGun setGun;
 
     public static StatManager Instance { get; private set; } = null;//Ω∫≈»¿ª ∫Òøˆ¡‹
@@ -34,7 +36,7 @@ public class StatManager : MonoBehaviour
                                     unit.MoveSpeed += unit.MoveSpeed * stat.value / 100;
                                     break;
                                 case PlayerStatType.Shield:
-                                    unit.Shield += stat.value;
+                                    unit.MaxShield += stat.value;
                                     break;
                             }
                             break;
@@ -49,7 +51,7 @@ public class StatManager : MonoBehaviour
                                     unit.MoveSpeed -= 4;
                                     break;
                                 case PlayerStatType.Shield:
-                                    unit.Shield -= 10;
+                                    unit.MaxShield -= 10;
                                     break;
                             }
                             break;
@@ -63,7 +65,7 @@ public class StatManager : MonoBehaviour
                                     unit.MoveSpeed *= 1.5f;
                                     break;
                                 case PlayerStatType.Shield:
-                                    unit.Shield *= 1.2f;
+                                    unit.MaxShield *= 1.2f;
                                     break;
                             }
                             break;

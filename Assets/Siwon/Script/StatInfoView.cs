@@ -9,12 +9,17 @@ public class StatInfoView : MonoBehaviour
     StatInfo statInfo;
     public Text Stat;
     public Button button;
+    public PlayerContorller Player;
+
     void Start()
     {
         button.onClick.AddListener(
             () => 
             { 
                 StatManager.Instance.ApplyStat(statInfo);
+                Player.SetLevelState();
+                this.gameObject.transform.parent.gameObject.SetActive(false);
+
                 Debug.Log("½ÇÇà");
 
             }
