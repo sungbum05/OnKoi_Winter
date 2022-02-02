@@ -116,6 +116,11 @@ public class PlayerContorller : Unit
         {
             yield return null;
 
+            if (Shield < 0)
+            {
+                Shield = 0;
+            }
+
             if (Shield < MaxShield && RefillTime <= 0.0f)
             {
                 yield return new WaitForSeconds(0.05f);

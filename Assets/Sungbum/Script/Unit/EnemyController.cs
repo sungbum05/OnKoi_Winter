@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : Unit
+public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용가능
 {
     [SerializeField]
     GameObject Player;
@@ -36,7 +36,7 @@ public class EnemyController : Unit
         EnemyMove();
     }
 
-    void EnemySet()
+    void EnemySet() // 적 기본 셋팅 awake나 start에서 실행
     {
         Hp = 35;
         RateAttack = RateTime;
@@ -63,7 +63,7 @@ public class EnemyController : Unit
         if(other.gameObject.CompareTag("Player") && RateAttack <= 0)
         {
             RateAttack = RateTime;
-            other.gameObject.GetComponent<PlayerContorller>().OnHit(10);
+            other.gameObject.GetComponent<PlayerContorller>().OnHit(10); // 플레이어 공격 
         }
     }
 
