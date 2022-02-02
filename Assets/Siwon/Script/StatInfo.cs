@@ -21,8 +21,8 @@ public class StatInfo : ScriptableObject
                     result += stat.statType switch
                     {
                         PlayerStatType.Hp => "최대 체력이",
-                        PlayerStatType.MoveSpeed => "이동 속도가",
-                        PlayerStatType.Damage => "데미지가",
+                        PlayerStatType.MoveSpeed => "이동 속도가(%)",
+                        PlayerStatType.Damage => "데미지가(%)",
                         PlayerStatType.Shield => "쉴드가",
                         _ => "",
                     };
@@ -30,10 +30,10 @@ public class StatInfo : ScriptableObject
                 case StatsType.Gun:
                     result += stat.gunType switch
                     {
-                        GunType.Chargerifle => "돌격소총의",
-                        GunType.Machinedagger => "기관단총의",
-                        GunType.Shotgun => "산탄총의",
-                        GunType.Pistol => "권총의",
+                        GunType.Chargerifle => "돌격소총의(%)",
+                        GunType.Machinedagger => "기관단총의(%)",
+                        GunType.Shotgun => "산탄총의(%)",
+                        GunType.Pistol => "권총의(%)",
                         _ => "",
                     };
 

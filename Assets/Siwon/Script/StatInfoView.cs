@@ -16,6 +16,7 @@ public class StatInfoView : MonoBehaviour
             { 
                 StatManager.Instance.ApplyStat(statInfo);
                 Debug.Log("½ÇÇà");
+
             }
             );
         
