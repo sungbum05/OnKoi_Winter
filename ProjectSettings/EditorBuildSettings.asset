@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Siyeon/Scene/SiyeonScene.unity
     guid: e41046cdbf56ab048865bb049537654e
   - enabled: 1
-    path: Assets/Siyeon/Sungbum/Scene/SungBumScene.unity
+    path: Assets/Sungbum/Scene/SungBumScene.unity
     guid: d8a8740f3e0d87b42b3e90210e93d417
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
