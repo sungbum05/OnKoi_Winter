@@ -4,27 +4,25 @@ using UnityEngine;
 
 public class ItemSpawner : Item
 {
-    public GameObject player;
     [SerializeField]
     public List<GameObject> ItemMenu = new List<GameObject>();
-    Vector3 playerPos;
+
     public float Radius = 5;
-    // Start is called before the first frame update
+
     void Start()
     {
-
-        playerPos = player.transform.position;
-
+        SpawnItem();
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator Wait()
     {
+        yield return new WaitForSeconds(10f);
         SpawnItem();
     }
     void SpawnItem()
     {
-        Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], Random.insideUnitSphere * Radius, Quaternion.identity);
-        Invoke("SpawnItem", 10f);
+        this.transform.position = new Vector3(Random.insideUnitSphere.x, 0, Random.insideUnitSphere.z);
+        Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], this.transform.position * Radius, Quaternion.identity);
+        StartCoroutine(Wait());
+        
     }
 }

@@ -28,14 +28,42 @@ public class StatInfo : ScriptableObject
                     };
                     break;
                 case StatsType.Gun:
-                    result += stat.gunType switch
+                    switch(stat.gunType)
                     {
-                        GunType.Chargerifle => "µ¹°Ý¼ÒÃÑÀÇ(%)",
-                        GunType.Machinedagger => "±â°ü´ÜÃÑÀÇ(%)",
-                        GunType.Shotgun => "»êÅºÃÑÀÇ(%)",
-                        GunType.Pistol => "±ÇÃÑÀÇ(%)",
-                        _ => "",
-                    };
+                        case GunType.Chargerifle:
+                            result += "µ¹°Ý¼ÒÃÑÀÇ(%)";
+                            switch (stat.gunStatType)
+                            {
+                                case GunStatType.Damage:
+                                    result += "µ¥¹ÌÁö°¡";
+                                    break;
+                                case GunStatType.Ammo:
+                                    result += "ÃÑ¾Ë °³¼ö°¡";
+                                    break;
+                                case GunStatType.BulletSpeed:
+                                    result += "ÃÑ¾Ë¼Óµµ°¡";
+                                        break;
+                                case GunStatType.BulletSpread:
+                                    result += "ÅºÆÛÁüÀÌ";
+                                    break;
+                                case GunStatType.RateFire:
+                                    result += "°ø°Ý¼Óµµ°¡";
+                                    break;
+                            }
+                            break;
+                        case GunType.Machinedagger:
+                            result += "±â°ü´ÜÃÑÀÇ(%)";
+                                break;
+                        case GunType.Shotgun:
+                            result += "»êÅºÃÑÀÇ(%)";
+                                break;
+                        case GunType.Pistol:
+                            result += "±ÇÃÑÀÇ(%)";
+                                break;
+                        default:
+                            result += "";
+                            break;
+                    }
 
                    break;
             }
@@ -45,7 +73,6 @@ public class StatInfo : ScriptableObject
             {
                 StatOperator.Plus => " Áõ°¡ÇÕ´Ï´Ù",
                 StatOperator.Minus => " °¨¼ÒÇÕ´Ï´Ù",
-                StatOperator.Multi => " ¹è°¡µË´Ï´Ù",
                 _ => "",
             };
             
@@ -95,7 +122,6 @@ public enum StatOperator
 {
     Plus,
     Minus,
-    Multi
 }
 [Serializable]
 public struct StatValue

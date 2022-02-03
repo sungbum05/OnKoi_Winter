@@ -55,20 +55,6 @@ public class StatManager : MonoBehaviour
                                     break;
                             }
                             break;
-                        case StatOperator.Multi:
-                            switch (stat.statType)
-                            {
-                                case PlayerStatType.Hp:
-                                    unit.Hp *= 1.2f;
-                                    break;
-                                case PlayerStatType.MoveSpeed:
-                                    unit.MoveSpeed *= 1.5f;
-                                    break;
-                                case PlayerStatType.Shield:
-                                    unit.MaxShield *= 1.2f;
-                                    break;
-                            }
-                            break;
                     }
                     break;
                 case StatsType.Gun:
