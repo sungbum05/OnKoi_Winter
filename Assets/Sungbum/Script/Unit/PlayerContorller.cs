@@ -40,7 +40,7 @@ public class PlayerContorller : Unit
 
         MaxShield = Shield;
         CurExp = 0;
-        MaxExp = 1;
+        MaxExp = 100;
 
         MoveSpeed = 7;
 

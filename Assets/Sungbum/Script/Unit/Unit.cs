@@ -37,7 +37,7 @@ public class Unit : MonoBehaviour
             Hp -= Damege;
         }
 
-        if(Hp < 0)
+        if(Hp <= 0)
         {
             Destroy(this.gameObject);
         }
