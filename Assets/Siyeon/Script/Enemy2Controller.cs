@@ -51,7 +51,7 @@ public class Enemy2Controller : Unit
             RateCurTime = 0;
             GameObject Bullet = Instantiate(this.Bullet);
             //오브젝트 위치 이동
-            Bullet.transform.localScale = Vector3.one * 3; // 스케일 조절
+            Bullet.transform.localScale = Vector3.one; // 스케일 조절
             Bullet.transform.position = transform.position;
             Bullet.GetComponent<Rigidbody>().AddForce((Player.transform.position -transform.position ) * BulletSpeed, ForceMode.Impulse); // 총알 발사
         }
