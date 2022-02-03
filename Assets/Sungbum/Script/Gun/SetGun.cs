@@ -7,9 +7,9 @@ public class SetGun : MonoBehaviour
     private enum GunType
     {
         Pistol = 0,
-        Revolver = 1,
-        ShotGun = 2,
-        MiniGun = 3,
+        ShotGun = 1,
+        SubmachineGun = 2,
+        AssaultRifle = 3,
     }
 
     public float Damege { get; set; }
@@ -58,16 +58,16 @@ public class SetGun : MonoBehaviour
                 SetPistol();
                 break;
 
-            case (int)GunType.Revolver:
-                SetRevolver();
-                break;
-
             case (int)GunType.ShotGun:
                 SetShotGun();
                 break;
 
-            case (int)GunType.MiniGun:
-                SetMiniGun();
+            case (int)GunType.SubmachineGun:
+                SetSubmachineGun();
+                break;
+
+            case (int)GunType.AssaultRifle:
+                SetAssaultRifle();
                 break;
         }
     }
@@ -82,22 +82,46 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SetPistol()
     {
+        Damege = 20.0f;
+        RateFire = 0.5f;
+        BulletSpread = 3.0f;
+        BulletSpeed = 200.0f;
+        HeatCapacity = 50.0f;
 
-    }
-
-    protected virtual void SetRevolver()
-    {
-
+        Ammo = 99999;
     }
 
     protected virtual void SetShotGun()
     {
+        Damege = 7.0f;
+        RateFire = 0.7f;
+        BulletSpread = 0.35f;
+        BulletSpeed = 200.0f;
+        HeatCapacity = 50.0f;
 
+        Ammo = 12;
     }
 
-    protected virtual void SetMiniGun()
+    protected virtual void SetSubmachineGun()
     {
+        Damege = 6.0f;
+        RateFire = 0.07f;
+        BulletSpread = 0.1f;
+        BulletSpeed = 220.0f;
+        HeatCapacity = 50.0f;
 
+        Ammo = 15;
+    }
+
+    protected virtual void SetAssaultRifle()
+    {
+        Damege = 30.0f;
+        RateFire = 0.25f;
+        BulletSpread = 0.30f;
+        BulletSpeed = 180.0f;
+        HeatCapacity = 100.0f;
+
+        Ammo = 15;
     }
 
     // ±ÇÃÑ
