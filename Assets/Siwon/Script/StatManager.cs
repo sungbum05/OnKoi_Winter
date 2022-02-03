@@ -266,11 +266,6 @@ public class StatManager : MonoBehaviour
                                             break;
                                     }
                                     break;
-
-
-
-
-
                             }
                             break;
 
