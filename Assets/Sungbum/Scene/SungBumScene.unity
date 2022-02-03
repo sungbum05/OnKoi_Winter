@@ -204,7 +204,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33844
+  m_Name: pb_Mesh19996
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1051,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &738610134
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1717,7 +1717,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-24700
+  m_Name: pb_Mesh19928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2490,7 +2490,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27642
+  m_Name: pb_Mesh19766
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3108,7 +3108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1576215828
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4081,7 +4081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &2147291917
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -4625,6 +4625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pistol_0
       objectReference: {fileID: 0}
+    - target: {fileID: 7976720145067170278, guid: 6e9603ac7b1d5144ea29929f8c8ef267, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e9603ac7b1d5144ea29929f8c8ef267, type: 3}
 --- !u!1001 &7937672829587997658
@@ -4681,6 +4685,10 @@ PrefabInstance:
     - target: {fileID: 3427960123185090714, guid: e110d7593290fd94187527aab320be5d, type: 3}
       propertyPath: m_Name
       value: assaultrifle_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3427960123185090714, guid: e110d7593290fd94187527aab320be5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3427960123185090715, guid: e110d7593290fd94187527aab320be5d, type: 3}
       propertyPath: BulletZip
