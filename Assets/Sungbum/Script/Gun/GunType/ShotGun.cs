@@ -82,7 +82,26 @@ public class ShotGun : SetGun
         {
             Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
 
-            hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
+            switch (GetEnemyType(hitInfo))
+            {
+                case 0:
+                    break;
+
+                case 1:
+                    hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
+                    break;
+
+                case 2:
+                    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
+                    break;
+
+                //case 3:
+                //    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
+                //    break;
+
+                default:
+                    break;
+            }
 
             GameObject Particle = Instantiate(GunParticle);
             Particle.transform.position = hitInfo.transform.position;
