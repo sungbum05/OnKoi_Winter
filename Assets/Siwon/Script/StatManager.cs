@@ -7,8 +7,12 @@ public class StatManager : MonoBehaviour
 {
     [SerializeField]
     private PlayerContorller unit;
-
-    private SetGun setGun;
+    
+    private Pistol pistol;
+    private ShotGun shotGun;
+    private AssaultRifle assaultRifle;
+    private SubmachineGun submachineGun;
+    
 
     public static StatManager Instance { get; private set; } = null;//스탯을 비워줌
     void Awake()
@@ -63,49 +67,49 @@ public class StatManager : MonoBehaviour
                         case StatOperator.Plus:
                             switch (stat.gunType)
                             {
-                                case GunType.Chargerifle:
+                                case GunType.AssualtRifle:
                                     switch (stat.gunStatType)
                                     {
                                         case GunStatType.Damage:
-                                            setGun.Damege += setGun.Damege * stat.value / 100;//공격력 50프로 증가
+                                            assaultRifle.Damege += assaultRifle.Damege * stat.value / 100;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo += setGun.Ammo * (int)stat.value / 100;
+                                            assaultRifle.Ammo += assaultRifle.Ammo * (int)stat.value / 100;
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed += setGun.BulletSpeed * stat.value / 100;
+                                            assaultRifle.BulletSpeed += assaultRifle.BulletSpeed * stat.value / 100;
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread += setGun.BulletSpread * stat.value;
+                                            assaultRifle.BulletSpread += assaultRifle.BulletSpread * stat.value;
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire += setGun.RateFire / 10;
+                                            assaultRifle.RateFire += assaultRifle.RateFire / 10;
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity += setGun.HeatCapacity / 5;
+                                            assaultRifle.HeatCapacity += assaultRifle.HeatCapacity / 5;
                                             break;
                                     }
                                     break;
-                                case GunType.Machinedagger:
+                                case GunType.Submachinegun:
                                     switch (stat.gunStatType)
                                     {//기관단총
                                         case GunStatType.Damage:
-                                            setGun.Damege += setGun.Damege / 2;//공격력 50프로 증가
+                                            submachineGun.Damege += submachineGun.Damege / 2;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo += setGun.Ammo / 5;
+                                            submachineGun.Ammo += submachineGun.Ammo / 5;
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed += setGun.BulletSpeed / 5;
+                                            submachineGun.BulletSpeed += submachineGun.BulletSpeed / 5;
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread += setGun.BulletSpread / 5;
+                                            submachineGun.BulletSpread += submachineGun.BulletSpread / 5;
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire += setGun.RateFire / 10;
+                                            submachineGun.RateFire += submachineGun.RateFire / 10;
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity += setGun.HeatCapacity / 5;
+                                            submachineGun.HeatCapacity += submachineGun.HeatCapacity / 5;
                                             break;
                                     }
                                     break;
@@ -113,22 +117,22 @@ public class StatManager : MonoBehaviour
                                     switch (stat.gunStatType)
                                     {
                                         case GunStatType.Damage:
-                                            setGun.Damege += setGun.Damege / 2;//공격력 50프로 증가
+                                            shotGun.Damege += shotGun.Damege / 2;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo += setGun.Ammo / 5;
+                                            shotGun.Ammo += shotGun.Ammo / 5;
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed += setGun.BulletSpeed / 5;
+                                            shotGun.BulletSpeed += shotGun.BulletSpeed / 5;
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread += setGun.BulletSpread / 5;
+                                            shotGun.BulletSpread += shotGun.BulletSpread / 5;
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire += setGun.RateFire / 10;
+                                            shotGun.RateFire += shotGun.RateFire / 10;
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity += setGun.HeatCapacity / 5;
+                                            shotGun.HeatCapacity += shotGun.HeatCapacity / 5;
                                             break;
                                     }
                                     break;
@@ -136,22 +140,22 @@ public class StatManager : MonoBehaviour
                                     switch (stat.gunStatType)
                                     {
                                         case GunStatType.Damage:
-                                            setGun.Damege += setGun.Damege * stat.value / 100;//공격력 50프로 증가
+                                            pistol.Damege += pistol.Damege * stat.value / 100;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo += setGun.Ammo / 5;//탄창 20%증가
+                                            pistol.Ammo += pistol.Ammo / 5;//탄창 20%증가
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed += setGun.BulletSpeed / 5; //투사체 속도 20%증가
+                                            pistol.BulletSpeed += pistol.BulletSpeed / 5; //투사체 속도 20%증가
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread += setGun.BulletSpread / 5;//탄퍼짐 20증가
+                                            pistol.BulletSpread += pistol.BulletSpread / 5;//탄퍼짐 20증가
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire += setGun.RateFire / 10;//발사 속도 10% 증가
+                                            pistol.RateFire += pistol.RateFire / 10;//발사 속도 10% 증가
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity += setGun.HeatCapacity / 5; //열용량 20% 증가
+                                            pistol.HeatCapacity += pistol.HeatCapacity / 5; //열용량 20% 증가
                                             break;
                                     }
                                     break;
@@ -160,49 +164,49 @@ public class StatManager : MonoBehaviour
                         case StatOperator.Minus:
                             switch (stat.gunType)
                             {
-                                case GunType.Chargerifle:
+                                case GunType.AssualtRifle:
                                     switch (stat.gunStatType)
                                     {
                                         case GunStatType.Damage:
-                                            setGun.Damege -= setGun.Damege * stat.value / 100;//공격력 50프로 증가
+                                            assaultRifle.Damege -= assaultRifle.Damege * stat.value / 100;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo -= setGun.Ammo * (int)stat.value / 100;
+                                            assaultRifle.Ammo -= assaultRifle.Ammo * (int)stat.value / 100;
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed -= setGun.BulletSpeed * stat.value / 100;
+                                            assaultRifle.BulletSpeed -= assaultRifle.BulletSpeed * stat.value / 100;
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread -= setGun.BulletSpread * stat.value;
+                                            assaultRifle.BulletSpread -= assaultRifle.BulletSpread * stat.value;
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire -= setGun.RateFire / 10;
+                                            assaultRifle.RateFire -= assaultRifle.RateFire / 10;
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity -= setGun.HeatCapacity / 5;
+                                            assaultRifle.HeatCapacity -= assaultRifle.HeatCapacity / 5;
                                             break;
                                     }
                                     break;
-                                case GunType.Machinedagger:
+                                case GunType.Submachinegun:
                                     switch (stat.gunStatType)
                                     {//기관단총
                                         case GunStatType.Damage:
-                                            setGun.Damege -= setGun.Damege / 2;//공격력 50프로 증가
+                                            submachineGun.Damege -= submachineGun.Damege / 2;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo -= setGun.Ammo / 5;
+                                            submachineGun.Ammo -= submachineGun.Ammo / 5;
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed -= setGun.BulletSpeed / 5;
+                                            submachineGun.BulletSpeed -= submachineGun.BulletSpeed / 5;
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread -= setGun.BulletSpread / 5;
+                                            submachineGun.BulletSpread -= submachineGun.BulletSpread / 5;
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire -= setGun.RateFire / 10;
+                                            submachineGun.RateFire -= submachineGun.RateFire / 10;
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity -= setGun.HeatCapacity / 5;
+                                            submachineGun.HeatCapacity -= submachineGun.HeatCapacity / 5;
                                             break;
                                     }
                                     break;
@@ -210,22 +214,22 @@ public class StatManager : MonoBehaviour
                                     switch (stat.gunStatType)
                                     {
                                         case GunStatType.Damage:
-                                            setGun.Damege -= setGun.Damege / 2;//공격력 50프로 증가
+                                            shotGun.Damege -= shotGun.Damege / 2;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo -= setGun.Ammo / 5;
+                                            shotGun.Ammo -= shotGun.Ammo / 5;
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed -= setGun.BulletSpeed / 5;
+                                            shotGun.BulletSpeed -= shotGun.BulletSpeed / 5;
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread -= setGun.BulletSpread / 5;
+                                            shotGun.BulletSpread -= shotGun.BulletSpread / 5;
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire -= setGun.RateFire / 10;
+                                            shotGun.RateFire -= shotGun.RateFire / 10;
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity -= setGun.HeatCapacity / 5;
+                                            shotGun.HeatCapacity -= shotGun.HeatCapacity / 5;
                                             break;
                                     }
                                     break;
@@ -233,22 +237,22 @@ public class StatManager : MonoBehaviour
                                     switch (stat.gunStatType)
                                     {
                                         case GunStatType.Damage:
-                                            setGun.Damege -= setGun.Damege * stat.value / 100;//공격력 50프로 증가
+                                            pistol.Damege -= pistol.Damege * stat.value / 100;//공격력 50프로 증가
                                             break;
                                         case GunStatType.Ammo:
-                                            setGun.Ammo -= setGun.Ammo / 5;//탄창 20%증가
+                                            pistol.Ammo -= pistol.Ammo / 5;//탄창 20%증가
                                             break;
                                         case GunStatType.BulletSpeed:
-                                            setGun.BulletSpeed -= setGun.BulletSpeed / 5; //투사체 속도 20%증가
+                                            pistol.BulletSpeed -= pistol.BulletSpeed / 5; //투사체 속도 20%증가
                                             break;
                                         case GunStatType.BulletSpread:
-                                            setGun.BulletSpread -= setGun.BulletSpread / 5;//탄퍼짐 20감소
+                                            pistol.BulletSpread -= pistol.BulletSpread / 5;//탄퍼짐 20감소
                                             break;
                                         case GunStatType.RateFire:
-                                            setGun.RateFire -= setGun.RateFire / 10;//발사 속도 10% 증가
+                                            pistol.RateFire -= pistol.RateFire / 10;//발사 속도 10% 증가
                                             break;
                                         case GunStatType.HeatCapacity:
-                                            setGun.HeatCapacity -= setGun.HeatCapacity / 5; //열용량 20% 증가
+                                            pistol.HeatCapacity -= pistol.HeatCapacity / 5; //열용량 20% 증가
                                             break;
                                     }
                                     break;

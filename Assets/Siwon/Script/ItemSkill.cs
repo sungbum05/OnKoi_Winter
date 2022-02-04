@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class ItemSkill : Item
 {
+    public enum ItemSkillType
+    {
+        Nuclear,
+        Turret,
+        DoubleScore,
+        DoubleDamage,
+        TimeScaleSlow,
+        AirStrike
+    }
     
 }

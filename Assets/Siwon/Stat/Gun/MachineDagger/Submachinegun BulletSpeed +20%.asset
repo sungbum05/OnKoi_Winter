@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79a0943043a6c684abf9c84525952b88, type: 3}
-  m_Name: Chargerifle BulletSpread - 10%
+  m_Name: Submachinegun BulletSpeed +20%
   m_EditorClassIdentifier: 
   statValues:
   - gunStatType: 6
-    gunType: 4
+    gunType: 2
     statsType: 1
     statType: 0
     statOperator: 1

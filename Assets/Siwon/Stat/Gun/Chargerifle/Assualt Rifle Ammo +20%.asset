@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79a0943043a6c684abf9c84525952b88, type: 3}
-  m_Name: Chargerifle Damage +10%
+  m_Name: Assualt Rifle Ammo +20%
   m_EditorClassIdentifier: 
   statValues:
   - gunStatType: 1
@@ -18,4 +18,4 @@ MonoBehaviour:
     statsType: 1
     statType: 0
     statOperator: 0
-    value: 10
+    value: 20

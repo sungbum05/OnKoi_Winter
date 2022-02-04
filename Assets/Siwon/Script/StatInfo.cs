@@ -30,7 +30,7 @@ public class StatInfo : ScriptableObject
                 case StatsType.Gun:
                     switch(stat.gunType)
                     {
-                        case GunType.Chargerifle:
+                        case GunType.AssualtRifle:
                             result += "돌격소총의(%)";
                             switch (stat.gunStatType)
                             {
@@ -49,25 +49,89 @@ public class StatInfo : ScriptableObject
                                 case GunStatType.RateFire:
                                     result += "공격속도가";
                                     break;
+                                case GunStatType.HeatCapacity:
+                                    result += "열 용량이";
+                                    break;
                             }
                             break;
-                        case GunType.Machinedagger:
+                        case GunType.Submachinegun:
                             result += "기관단총의(%)";
-                                break;
+                            switch (stat.gunStatType)
+                            {
+                                case GunStatType.Damage:
+                                    result += "데미지가";
+                                    break;
+                                case GunStatType.Ammo:
+                                    result += "총알 개수가";
+                                    break;
+                                case GunStatType.BulletSpeed:
+                                    result += "총알속도가";
+                                    break;
+                                case GunStatType.BulletSpread:
+                                    result += "탄퍼짐이";
+                                    break;
+                                case GunStatType.RateFire:
+                                    result += "공격속도가";
+                                    break;
+                                case GunStatType.HeatCapacity:
+                                    result += "열 용량이";
+                                    break;
+                            }
+                            break;
                         case GunType.Shotgun:
                             result += "산탄총의(%)";
-                                break;
+                            switch (stat.gunStatType)
+                            {
+                                case GunStatType.Damage:
+                                    result += "데미지가";
+                                    break;
+                                case GunStatType.Ammo:
+                                    result += "총알 개수가";
+                                    break;
+                                case GunStatType.BulletSpeed:
+                                    result += "총알속도가";
+                                    break;
+                                case GunStatType.BulletSpread:
+                                    result += "탄퍼짐이";
+                                    break;
+                                case GunStatType.RateFire:
+                                    result += "공격속도가";
+                                    break;
+                                case GunStatType.HeatCapacity:
+                                    result += "열 용량이";
+                                    break;
+                            }
+                            break;
                         case GunType.Pistol:
                             result += "권총의(%)";
-                                break;
+                            switch (stat.gunStatType)
+                            {
+                                case GunStatType.Damage:
+                                    result += "데미지가";
+                                    break;
+                                case GunStatType.Ammo:
+                                    result += "총알 개수가";
+                                    break;
+                                case GunStatType.BulletSpeed:
+                                    result += "총알속도가";
+                                    break;
+                                case GunStatType.BulletSpread:
+                                    result += "탄퍼짐이";
+                                    break;
+                                case GunStatType.RateFire:
+                                    result += "공격속도가";
+                                    break;
+                                case GunStatType.HeatCapacity:
+                                    result += "열 용량이";
+                                    break;
+                            }
+                            break;
                         default:
                             result += "";
                             break;
                     }
-
                    break;
             }
-            
             result += $" {stat.value}만큼";
             result += stat.statOperator switch
             {
@@ -75,7 +139,6 @@ public class StatInfo : ScriptableObject
                 StatOperator.Minus => " 감소합니다",
                 _ => "",
             };
-            
             result += "\n";
         }
         
@@ -89,15 +152,14 @@ public enum StatsType
     Gun,
     Player
 }
-//Machinedagger:기관단총
-//Chargerifle:돌격소총
+
 public enum GunType
 {
     None,
     Pistol,
-    Machinedagger,
+    Submachinegun,
     Shotgun,
-    Chargerifle
+    AssualtRifle
 }
 
 public enum PlayerStatType
