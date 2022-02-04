@@ -27,7 +27,6 @@ public class SubmachineGun : SetGun
             //SoundMgr.In.PlaySound("1");
             RateFire = 0.07f;
 
-            StartCoroutine("CreatedBullet");
             RaycastHit hitInfo;
 
             GameObject Bullet = Instantiate(AmmoType);
@@ -36,7 +35,7 @@ public class SubmachineGun : SetGun
             Bullet.transform.position = new Vector3(this.ShootPosition.position.x, // 생성위치 이동
             this.ShootPosition.position.y, this.ShootPosition.position.z);
 
-            Vector3 RandomRay = new Vector3(Random.RandomRange(-BulletSpread, BulletSpread + 0.1f), 0, 0);
+            Vector3 RandomRay = new Vector3(Random.RandomRange(-BulletSpread, BulletSpread + 0.1f), 0, Random.RandomRange(-BulletSpread, BulletSpread + 0.1f));
 
             Bullet.GetComponent<Rigidbody>().AddForce((this.ShootPosition.forward + RandomRay) * BulletSpeed, ForceMode.Impulse);
             Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
@@ -47,7 +46,20 @@ public class SubmachineGun : SetGun
             {
                 Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
 
-                hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
+                switch (GetEnemyType(hitInfo))
+                {
+                    case 1:
+                        hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
+                        break;
+
+                    case 2:
+                        hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
+                        break;
+
+                    //case 3:
+                    //    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
+                    //    break;
+                }
 
                 GameObject Particle = Instantiate(GunParticle);
                 Particle.transform.position = hitInfo.transform.position;

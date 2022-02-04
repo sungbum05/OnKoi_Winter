@@ -32,8 +32,6 @@ public class EnemySpawner : MonoBehaviour
         Enemy.transform.position = new Vector3(transform.parent.position.x + ((RanX = Random.Range(0, 2) == 0 ? -1 : 1) * Random.Range(10.0f, 16.0f)), this.transform.position.y, 
             this.transform.parent.position.z + ((RanZ = Random.Range(0, 2) == 0 ? -1 : 1) * Random.Range(10.0f, 16.0f)));
 
-        Debug.Log(Enemy.transform.position);
-
         yield return new WaitForSeconds(Random.Range(0.8f, 1.3f));
         StartCoroutine("EnemySpawn");
     }

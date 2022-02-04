@@ -24,6 +24,9 @@ public class SetGun : MonoBehaviour
     private string[] GunName;
 
     [SerializeField]
+    protected string[] EnemyType;
+
+    [SerializeField]
     private int GunNum;
 
     [SerializeField]
@@ -77,6 +80,32 @@ public class SetGun : MonoBehaviour
         if (RateFire >= 0)
         {
             RateFire -= Time.deltaTime;
+        }
+    }
+
+    protected int GetEnemyType(RaycastHit HitInfo)
+    {
+        int SecondIdx = 1;
+
+        EnemyType = HitInfo.transform.gameObject.name.Split('_');
+
+        switch (int.Parse(EnemyType[SecondIdx]))
+        {
+            case 1:
+                return 1;
+                break;
+
+            case 2:
+                return 2;
+                break;
+
+            case 3:
+                return 3;
+                break;
+
+            default: 
+                return 0;
+                break;
         }
     }
 
