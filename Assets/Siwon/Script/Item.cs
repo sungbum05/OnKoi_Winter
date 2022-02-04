@@ -8,7 +8,7 @@ using System;
 public abstract class Item : MonoBehaviour
 {
     [SerializeField]
-    Text text; 
+    Text text;
     public enum ItemType
     {
         Gun,
