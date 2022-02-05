@@ -400,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606308581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 12.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1547799947}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 669477730}
   - component: {fileID: 669477729}
   m_Layer: 0
-  m_Name: Maincamera
+  m_Name: Main Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669477728}
   m_LocalRotation: {x: 0.3470953, y: -0, z: -0, w: 0.9378299}
-  m_LocalPosition: {x: 0, y: 13.28, z: 0}
+  m_LocalPosition: {x: 0, y: 20, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -519,7 +519,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd73241fa84a5e4fbd402b6247125aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
   ItemMenu:
   - {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
   - {fileID: 6237582144165396076, guid: be2a895af10f83a40b022531caaec6f8, type: 3}
@@ -529,6 +528,7 @@ MonoBehaviour:
   - {fileID: 6237582144165396076, guid: bb6103e7d735278409ab2eeb2a080b1b, type: 3}
   - {fileID: 6237582144165396076, guid: 461805acfd1ef75469487b24f1dd25b9, type: 3}
   Radius: 5
+  ItemPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1547799947
 Transform:
   m_ObjectHideFlags: 0

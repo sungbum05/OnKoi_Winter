@@ -7,6 +7,9 @@ using System;
 
 public abstract class Item : MonoBehaviour
 {
+    public bool HitPlayer = false;
+    public bool Itemuse = false;
+    Camera Cam;
     [SerializeField]
     Text text;
     public enum ItemType
@@ -16,9 +19,23 @@ public abstract class Item : MonoBehaviour
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
-            text.transform.position = this.transform.position;
+            HitPlayer = true;
+        }
+    }
+    void Start()
+    {
+        
+        Cam = Camera.main;
+    }
+    protected virtual void Update()
+    {
+        text.transform.rotation = Cam.transform.rotation;
+        if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
+        {
+            Destroy(this.gameObject);
+            Itemuse = true;
         }
     }
 }
