@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 7836321550428380076}
   - component: {fileID: 1101913401}
   m_Layer: 0
-  m_Name: pistol_1
+  m_Name: pistol_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GunName: []
+  EnemyType: []
   GunNum: 0
   GunParticle: {fileID: 1999723261588981601, guid: 092d0d1df4ad8b5478d786ca1cc42f28, type: 3}
   AmmoType: {fileID: 5803814905810553269, guid: 416b2709ebb862247af82cefe0c8a318, type: 3}

@@ -10,6 +10,7 @@ public class SetGun : MonoBehaviour
         ShotGun = 1,
         SubmachineGun = 2,
         AssaultRifle = 3,
+        Turret = 4,
     }
 
     public float Damege { get; set; }
@@ -72,6 +73,10 @@ public class SetGun : MonoBehaviour
             case (int)GunType.AssaultRifle:
                 SetAssaultRifle();
                 break;
+
+            case (int)GunType.Turret:
+                SetTurret();
+                break;
         }
     }
 
@@ -133,6 +138,14 @@ public class SetGun : MonoBehaviour
         HeatCapacity = 100.0f;
 
         Ammo = 15;
+    }
+
+    protected virtual void SetTurret()
+    {
+        Damege = 10.0f;
+        RateFire = 0.25f;
+        BulletSpread = 0.1f;
+        BulletSpeed = 210.0f;
     }
 
     // ±ÇÃÑ
