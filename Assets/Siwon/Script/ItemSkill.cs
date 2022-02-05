@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSkill : Item
+public class ItemSkill : MonoBehaviour
 {
     public enum ItemSkillType
     {
