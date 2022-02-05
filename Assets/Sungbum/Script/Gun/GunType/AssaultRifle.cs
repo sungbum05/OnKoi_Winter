@@ -25,7 +25,7 @@ public class AssaultRifle : SetGun
         if (Input.GetMouseButton(0) && RateFire <= 0.0f)
         {
             //SoundMgr.In.PlaySound("1");
-            RateFire = 0.1f;
+            RateFire = 0.16f;
 
             RaycastHit hitInfo;
 

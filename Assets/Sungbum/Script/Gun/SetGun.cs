@@ -99,7 +99,7 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SetPistol()
     {
-        Damege = 20.0f;
+        Damege = 12.0f;
         RateFire = 0.5f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
@@ -110,7 +110,7 @@ public class SetGun : MonoBehaviour
     protected virtual void SetShotGun()
     {
         Damege = 7.0f;
-        RateFire = 0.7f;
+        RateFire = 0.9f;
         BulletSpread = 0.35f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
@@ -120,9 +120,9 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SetSubmachineGun()
     {
-        Damege = 6.0f;
-        RateFire = 0.07f;
-        BulletSpread = 0.1f;
+        Damege = 8.0f;
+        RateFire = 0.02f;
+        BulletSpread = 0.2f;
         BulletSpeed = 220.0f;
         HeatCapacity = 50.0f;
 
@@ -131,9 +131,9 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SetAssaultRifle()
     {
-        Damege = 30.0f;
-        RateFire = 0.25f;
-        BulletSpread = 0.20f;
+        Damege = 20.0f;
+        RateFire = 0.5f;
+        BulletSpread = 0.1f;
         BulletSpeed = 180.0f;
         HeatCapacity = 100.0f;
 

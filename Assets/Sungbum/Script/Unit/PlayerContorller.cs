@@ -34,13 +34,13 @@ public class PlayerContorller : Unit
 
     void SetState()
     {
-        Hp = 10000;
+        Hp = 100;
         Shield = 50;
 
 
         MaxShield = Shield;
         CurExp = 0;
-        MaxExp = 100;
+        MaxExp = 20;
 
         MoveSpeed = 7;
 

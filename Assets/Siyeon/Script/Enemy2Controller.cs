@@ -13,7 +13,7 @@ public class Enemy2Controller : Unit
     Vector3 TargetPosition;
 
     private float RateAttack;
-    private float RateTime = 0.5f;
+    private float RateTime = 0.8f;
     private float RateCurTime = 0;
     private float BulletSpeed = 3;
 
@@ -59,9 +59,9 @@ public class Enemy2Controller : Unit
 
     void EnemySet() // 적 기본 셋팅 awake나 start에서 실행
     {
-        Hp = 35;
+        Hp = 25;
         RateAttack = RateTime;
-        MoveSpeed = 1.5f;
+        MoveSpeed = 1.0f;
     }
 
     void Target()

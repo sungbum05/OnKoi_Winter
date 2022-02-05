@@ -8,9 +8,13 @@ public class StatManager : MonoBehaviour
     [SerializeField]
     private PlayerContorller unit;
     
+    [SerializeField]
     private Pistol pistol;
+    [SerializeField]
     private ShotGun shotGun;
+    [SerializeField]
     private AssaultRifle assaultRifle;
+    [SerializeField]
     private SubmachineGun submachineGun;
     
 
