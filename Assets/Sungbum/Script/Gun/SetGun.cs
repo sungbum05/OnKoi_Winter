@@ -10,6 +10,7 @@ public class SetGun : MonoBehaviour
         ShotGun = 1,
         SubmachineGun = 2,
         AssaultRifle = 3,
+        Turret = 4,
     }
 
     public float Damege { get; set; }
@@ -72,6 +73,10 @@ public class SetGun : MonoBehaviour
             case (int)GunType.AssaultRifle:
                 SetAssaultRifle();
                 break;
+
+            case (int)GunType.Turret:
+                SetTurret();
+                break;
         }
     }
 
@@ -89,31 +94,13 @@ public class SetGun : MonoBehaviour
 
         EnemyType = HitInfo.transform.gameObject.name.Split('_');
 
-        switch (int.Parse(EnemyType[SecondIdx]))
-        {
-            case 1:
-                return 1;
-                break;
-
-            case 2:
-                return 2;
-                break;
-
-            case 3:
-                return 3;
-                break;
-
-            default: 
-                return 0;
-                break;
-        }
+        return int.Parse(EnemyType[SecondIdx]);
     }
 
     protected virtual void SetPistol()
     {
         Damege = 20.0f;
         RateFire = 0.5f;
-        BulletSpread = 3.0f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
 
@@ -146,11 +133,19 @@ public class SetGun : MonoBehaviour
     {
         Damege = 30.0f;
         RateFire = 0.25f;
-        BulletSpread = 0.30f;
+        BulletSpread = 0.20f;
         BulletSpeed = 180.0f;
         HeatCapacity = 100.0f;
 
         Ammo = 15;
+    }
+
+    protected virtual void SetTurret()
+    {
+        Damege = 10.0f;
+        RateFire = 0.25f;
+        BulletSpread = 0.1f;
+        BulletSpeed = 210.0f;
     }
 
     // ±ÇÃÑ

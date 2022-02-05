@@ -34,7 +34,7 @@ public class PlayerContorller : Unit
 
     void SetState()
     {
-        Hp = 100;
+        Hp = 10000;
         Shield = 50;
 
 
@@ -77,7 +77,6 @@ public class PlayerContorller : Unit
             Vector3 pointTolook = cameraRay.GetPoint(rayLength);
 
             transform.LookAt(new Vector3(pointTolook.x, transform.position.y, pointTolook.z));
-
         }
     }
 

@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
         float Scale = Random.Range(0.8f, 2.0f);
         int RanZ = 0, RanX = 0;
 
-        GameObject Enemy = Instantiate(EnemyPrefab[0]);
+        GameObject Enemy = Instantiate(EnemyPrefab[Random.RandomRange(0, EnemyPrefab.Count)]);
 
         Enemy.transform.DOScale(new Vector3(Scale, Scale, Scale), Random.Range(0.6f, 1.0f));
 

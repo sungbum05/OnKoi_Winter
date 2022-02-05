@@ -80,34 +80,29 @@ public class ShotGun : SetGun
 
         if (Physics.Raycast(this.transform.position, this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
         {
-            Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
-
-            switch (GetEnemyType(hitInfo))
+            if(hitInfo.transform.gameObject.tag == "Enemy")
             {
-                case 0:
-                    break;
+                Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
 
-                case 1:
-                    hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
-                    break;
+                switch (GetEnemyType(hitInfo))
+                {
+                    case 1:
+                        hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
+                        break;
 
-                case 2:
-                    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
-                    break;
+                    case 2:
+                        hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
+                        break;
 
-                //case 3:
-                //    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
-                //    break;
+                        //case 3:
+                        //    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
+                        //    break;
+                }
 
-                default:
-                    break;
+                GameObject Particle = Instantiate(GunParticle);
+                Particle.transform.position = hitInfo.transform.position;
+                Destroy(Bullet, Random.Range(0.07f, 0.11f));
             }
-
-            GameObject Particle = Instantiate(GunParticle);
-            Particle.transform.position = hitInfo.transform.position;
-            Destroy(Bullet, Random.Range(0.07f, 0.11f));
-
-            Debug.Log(hitInfo.transform.name);
         }
 
         if (ShotGunCnt >= 10)
@@ -118,7 +113,8 @@ public class ShotGun : SetGun
 
         else
         {
-            yield return new WaitForSeconds(Random.RandomRange(0.000002f, 0.000005f));
+            Debug.Log("hi");
+            yield return new WaitForSeconds(Random.RandomRange(0.00002f, 0.00005f));
             StartCoroutine("CreatedBullet");
         }
     }
