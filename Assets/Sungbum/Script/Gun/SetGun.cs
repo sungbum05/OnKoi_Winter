@@ -89,31 +89,13 @@ public class SetGun : MonoBehaviour
 
         EnemyType = HitInfo.transform.gameObject.name.Split('_');
 
-        switch (int.Parse(EnemyType[SecondIdx]))
-        {
-            case 1:
-                return 1;
-                break;
-
-            case 2:
-                return 2;
-                break;
-
-            case 3:
-                return 3;
-                break;
-
-            default: 
-                return 0;
-                break;
-        }
+        return int.Parse(EnemyType[SecondIdx]);
     }
 
     protected virtual void SetPistol()
     {
         Damege = 20.0f;
         RateFire = 0.5f;
-        BulletSpread = 3.0f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
 
@@ -146,7 +128,7 @@ public class SetGun : MonoBehaviour
     {
         Damege = 30.0f;
         RateFire = 0.25f;
-        BulletSpread = 0.30f;
+        BulletSpread = 0.20f;
         BulletSpeed = 180.0f;
         HeatCapacity = 100.0f;
 
