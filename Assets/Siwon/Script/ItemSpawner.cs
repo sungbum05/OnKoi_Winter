@@ -7,8 +7,9 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField]
     public List<GameObject> ItemMenu = new List<GameObject>();
 
-    public float Radius = 5;
+    public float Radius = 30;
     public Vector3 ItemPosition;
+    
     void Start()
     {
         SpawnItem();
@@ -20,9 +21,9 @@ public class ItemSpawner : MonoBehaviour
     }
     void SpawnItem()
     {
-        this.transform.position = new Vector3(Random.insideUnitSphere.x, 0, Random.insideUnitSphere.z);
-        ItemPosition = this.transform.position;
-        Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], ItemPosition * Radius, Quaternion.identity);
+        Vector3 Spawn = Random.insideUnitSphere * Radius;
+        ItemPosition = new Vector3(Spawn.x, 0.1f, Spawn.z) + transform.position;
+        GameObject a = Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], ItemPosition, Quaternion.identity);
         StartCoroutine(Wait());
         
     }

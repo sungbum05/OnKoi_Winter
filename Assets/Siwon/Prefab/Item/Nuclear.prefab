@@ -116,8 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPlayer: 0
   Itemuse: 0
-  Cam: {fileID: 0}
-  text: {fileID: 6916627889929655534}
+  Itemname: {fileID: 6916627889929655534}
   Nuclearoj: {fileID: 5188711711590582779, guid: 97725db035ac9814a98c93702b7bffc5, type: 3}
 --- !u!1 &7806374543560311827
 GameObject:

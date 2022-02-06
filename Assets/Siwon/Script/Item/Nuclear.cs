@@ -8,25 +8,27 @@ public class Nuclear : Item
     private GameObject Nuclearoj;
     private ItemSpawner itemSpawner;
 
-    Vector3 NuclearScale;
+    private Vector3 NuclearScale;
     float Scale = 0.1f;
     
     void Start()
     {
-        
+        NuclearScale = Nuclearoj.transform.localScale;
     }
-    new void Update()
+    
+    void Update()
     {
         base.Update();
         if(Itemuse == true)
         {
             NuclearItem();
-                NuclearScale = Nuclearoj.transform.localScale;
+                
             while (true)
             {
                 if(Scale == 5)
                 {
                     NuclearScale = new Vector3(+Scale, +Scale, +Scale);
+
                 }
             }
         }
@@ -34,6 +36,6 @@ public class Nuclear : Item
     }
     void NuclearItem()
     {
-        Instantiate(Nuclearoj, itemSpawner.ItemPosition, Quaternion.identity);
+        GameObject a = Instantiate(Nuclearoj, itemSpawner.ItemPosition, Quaternion.identity);
     }
 }

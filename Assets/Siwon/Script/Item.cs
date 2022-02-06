@@ -9,9 +9,22 @@ public abstract class Item : MonoBehaviour
 {
     public bool HitPlayer = false;
     public bool Itemuse = false;
-    Camera Cam;
+    private Camera cam;
+    public Camera Cam
+    {
+        get
+        {
+            if (cam == null)
+            {
+                cam = Camera.main;
+            }
+            return cam;
+        }
+    }
+    
     [SerializeField]
-    Text text;
+    Text Itemname;
+    Text Key;
     public enum ItemType
     {
         Gun,
@@ -24,14 +37,10 @@ public abstract class Item : MonoBehaviour
             HitPlayer = true;
         }
     }
-    void Start()
-    {
-        
-        Cam = Camera.main;
-    }
+       
     protected virtual void Update()
     {
-        text.transform.rotation = Cam.transform.rotation;
+        Itemname.transform.forward = Cam.transform.forward;
         if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
         {
             Destroy(this.gameObject);
