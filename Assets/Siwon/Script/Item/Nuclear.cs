@@ -14,6 +14,7 @@ public class Nuclear : Item
     void Start()
     {
         NuclearScale = Nuclearoj.transform.localScale;
+        
     }
     
     void Update()
