@@ -48,6 +48,7 @@ public class EnemyLaserController : Unit
         Player = GameObject.Find("Player");
         uI_Manager = GameObject.Find("UiManager").GetComponent<UI_Manager>();
         EnemySet();
+
         ActivateTLS();
         DeactivateTLS();
     }
@@ -56,10 +57,12 @@ public class EnemyLaserController : Unit
     void Update()
     {
         RateAttackDel();
+
         if (lineRenderer.enabled == true)
         {
             RotateTLS();
         }
+
         RateCurTime += Time.deltaTime;
 
         if (Vector3.Distance(transform.position, Player.transform.position) > Range)
@@ -74,6 +77,8 @@ public class EnemyLaserController : Unit
             Bullet.transform.localScale = Vector3.one; // 스케일 조절
             Bullet.transform.position = transform.position;
             Bullet.GetComponent<Rigidbody>().AddForce((Player.transform.position - transform.position) * BulletSpeed, ForceMode.Impulse); // 총알 발사*/
+
+            if (Player == null) return;
 
             Vector3 launchPosition = laserTransform.position;
             Vector3 directionVector = (Player.transform.position - launchPosition).normalized;
@@ -142,14 +147,13 @@ public class EnemyLaserController : Unit
     void RotateTLS()
     {
         if (Player == null) return;
-
+        
         Vector3 launchPosition = laserTransform.position;
-
         laserTargetPosition = Vector3.Lerp(laserTargetPosition, Player.transform.position, laserRotateLerpAmount * Time.deltaTime);
         Vector3 directionVector = (laserTargetPosition - launchPosition).normalized;
-
-        lineRenderer.SetPosition(0, launchPosition);
-        lineRenderer.SetPosition(1, launchPosition + directionVector * distance);
+        
+        
+        // Damage
 
         RaycastHit hit;
         Physics.Raycast(lineRenderer.GetPosition(0), directionVector, out hit, distance);
@@ -158,18 +162,20 @@ public class EnemyLaserController : Unit
 
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider);
+            //Debug.Log(hit.collider);
             lineDistance = hit.distance;
 
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
             {
                 //hit.collider.GetComponent<TargetObject>()?.OnDamage(damage, gameObject.layer);
+                //데미지 넣어야 하는 부분 인데.. 데미지가 안들어감..
+               // hit.collider.GetComponent<PlayerContorller>().OnHit(10);
                 Debug.Log("lklklk");
             }
         }
 
         lineRenderer.SetPosition(0, launchPosition);
-        lineRenderer.SetPosition(1, launchPosition + directionVector * lineDistance);
+        //lineRenderer.SetPosition(1, launchPosition + directionVector * lineDistance);
     }
 
 }
