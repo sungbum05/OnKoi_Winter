@@ -1,32 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Nuclear : Item
 {
-    [SerializeField]
-    private GameObject Nuclearoj;
-    private ItemSpawner itemSpawner;
+ 
+    public  GameObject Nuclearoj;
+    ItemSpawner itemSpawner;
 
+   
     private Vector3 NuclearScale;
     float Scale = 0.1f;
-    
-    void Start()
+    private Text Name;
+    private Item item;
+    private string name;
+
+    new void Start()
     {
+        Name = GetComponent<Text>();
+        name = this.gameObject.name;
+        Name.text = name;
         NuclearScale = Nuclearoj.transform.localScale;
-        
     }
-    
-    void Update()
+
+    new void Update()
     {
         base.Update();
-        if(Itemuse == true)
+        if (Itemuse == true)
         {
             NuclearItem();
-                
+
             while (true)
             {
-                if(Scale == 5)
+                if (Scale == 5)
                 {
                     NuclearScale = new Vector3(+Scale, +Scale, +Scale);
 
@@ -37,6 +44,9 @@ public class Nuclear : Item
     }
     void NuclearItem()
     {
-        GameObject a = Instantiate(Nuclearoj, itemSpawner.ItemPosition, Quaternion.identity);
+        Debug.Assert(Nuclearoj != null);
+        Debug.Assert(itemSpawner != null);
+
+        Instantiate(Nuclearoj, this.transform.position, Quaternion.identity);
     }
 }

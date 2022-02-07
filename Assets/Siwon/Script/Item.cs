@@ -21,23 +21,29 @@ public abstract class Item : MonoBehaviour
             return cam;
         }
     }
-    
+
     [SerializeField]
-    Text Itemname;
-    Text Key;
+    protected Text Itemname;
+    private Text Key;
     public enum ItemType
     {
         Gun,
         Item
     }
+    protected virtual void Start()
+    {
+        Itemname.text = GetComponent<Item>().name;
+
+    }
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+
             HitPlayer = true;
         }
     }
-       
+
     protected virtual void Update()
     {
         Itemname.transform.forward = Cam.transform.forward;
