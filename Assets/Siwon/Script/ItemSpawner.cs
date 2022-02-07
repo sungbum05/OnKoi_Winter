@@ -9,14 +9,13 @@ public class ItemSpawner : MonoBehaviour
     public List<GameObject> ItemMenu = new List<GameObject>();
 
     public float Radius = 30;
+    private SpawnItem spawnItem;
+    Vector3 ItemPosition;
 
-    public Vector3 ItemPosition;
 
-   
 
     void Start()
     {
-        
         SpawnItem();
     }
     IEnumerator Wait()
@@ -26,10 +25,16 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawnItem()
     {
-        Vector3 Spawn = Random.insideUnitSphere * Radius;
-        ItemPosition = new Vector3(Spawn.x, 0.1f, Spawn.z) + transform.position;
+        
         GameObject a = Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], ItemPosition, Quaternion.identity);
         StartCoroutine(Wait());
         
     }
+}
+public class SpawnItem
+{
+    
+    Vector3 spawn = Random.insideUnitSphere * Radius;
+    ItemPosition = new Vector3(spawn.x, 0.1f, spawn.z) + transform.position;
+   
 }

@@ -31,12 +31,12 @@ public class Nuclear : Item
         {
             NuclearItem();
 
-            while (true)
+            while(true)
             {
+                NuclearScale = new Vector3(+Scale, +Scale, +Scale);
                 if (Scale == 5)
                 {
-                    NuclearScale = new Vector3(+Scale, +Scale, +Scale);
-
+                    break;
                 }
             }
         }
