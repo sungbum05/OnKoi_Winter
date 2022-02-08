@@ -8,7 +8,7 @@ public class Nuclear : Item
  
     public  GameObject Nuclearoj;
     ItemSpawner itemSpawner;
-
+    SphereCollider NuclearojCollider;
    
     private Vector3 NuclearScale;
     float Scale = 0.1f;
@@ -20,8 +20,9 @@ public class Nuclear : Item
 
     new void Start()
     {
+        NuclearojCollider = Nuclearoj.GetComponent<SphereCollider>();
         int firstIdx = 0;
-
+        
         Objname = this.gameObject.name.Split('_');
         Name.text = Objname[firstIdx];
         NuclearScale = Nuclearoj.transform.localScale;
@@ -38,6 +39,7 @@ public class Nuclear : Item
             while(true)
             {
                 NuclearScale = new Vector3(+Scale, +Scale, +Scale);
+                NuclearojCollider.radius += Scale;
                 if (Scale == 5)
                 {
                     break;
@@ -46,6 +48,7 @@ public class Nuclear : Item
         }
         Itemuse = false;
     }
+    
     void NuclearItem()
     {
         Debug.Assert(Nuclearoj != null);
