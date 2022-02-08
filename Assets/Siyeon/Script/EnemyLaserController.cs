@@ -17,25 +17,10 @@ public class EnemyLaserController : Unit
     private float RateCurTime = 0;
     private float BulletSpeed = 3;
 
-    Vector3 laserTargetPosition;
-    float laserRotateLerpAmount;
-
-    [SerializeField]
-    LineRenderer lineRenderer;
-    [SerializeField]
-    Transform laserTransform;
-    [SerializeField]
-    float laserActivateTime;
-    [SerializeField]
-    float laserCooldownTime;
-
-    [SerializeField]
-    float distance = 1000;
-
     public GameObject Bullet;
     public float Range;
 
-
+   
     private void OnDestroy()
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
@@ -49,20 +34,11 @@ public class EnemyLaserController : Unit
         uI_Manager = GameObject.Find("UiManager").GetComponent<UI_Manager>();
         EnemySet();
 
-        ActivateTLS();
-        DeactivateTLS();
     }
 
     // Update is called once per frame
     void Update()
     {
-        RateAttackDel();
-
-        if (lineRenderer.enabled == true)
-        {
-            RotateTLS();
-        }
-
         RateCurTime += Time.deltaTime;
 
         if (Vector3.Distance(transform.position, Player.transform.position) > Range)
@@ -77,13 +53,6 @@ public class EnemyLaserController : Unit
             Bullet.transform.localScale = Vector3.one; // 스케일 조절
             Bullet.transform.position = transform.position;
             Bullet.GetComponent<Rigidbody>().AddForce((Player.transform.position - transform.position) * BulletSpeed, ForceMode.Impulse); // 총알 발사*/
-
-            if (Player == null) return;
-
-            Vector3 launchPosition = laserTransform.position;
-            Vector3 directionVector = (Player.transform.position - launchPosition).normalized;
-            lineRenderer.SetPosition(0, launchPosition);
-            lineRenderer.SetPosition(1, launchPosition + directionVector * distance);
 
         }        
     }
@@ -121,61 +90,6 @@ public class EnemyLaserController : Unit
         }
     }
 
-    void RateAttackDel()
-    {
-        if (RateAttack >= 0)
-        {
-            RateAttack -= Time.deltaTime;
-        }
-    }
-
-    void ActivateTLS()
-    {
-        lineRenderer.enabled = true;
-        laserTargetPosition = laserTransform.position + laserTransform.right * distance;
-        lineRenderer.SetPosition(1, laserTargetPosition);
-        Invoke("DeactivateTLS", laserActivateTime);
-    }
-
-    void DeactivateTLS()
-    {
-        lineRenderer.enabled = false;
-        Invoke("ActivateTLS", laserCooldownTime);
-    }
-
-
-    void RotateTLS()
-    {
-        if (Player == null) return;
-        
-        Vector3 launchPosition = laserTransform.position;
-        laserTargetPosition = Vector3.Lerp(laserTargetPosition, Player.transform.position, laserRotateLerpAmount * Time.deltaTime);
-        Vector3 directionVector = (laserTargetPosition - launchPosition).normalized;
-        
-        
-        // Damage
-
-        RaycastHit hit;
-        Physics.Raycast(lineRenderer.GetPosition(0), directionVector, out hit, distance);
-
-        float lineDistance = distance;
-
-        if (hit.collider != null)
-        {
-            //Debug.Log(hit.collider);
-            lineDistance = hit.distance;
-
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
-            {
-                //hit.collider.GetComponent<TargetObject>()?.OnDamage(damage, gameObject.layer);
-                //데미지 넣어야 하는 부분 인데.. 데미지가 안들어감..
-               // hit.collider.GetComponent<PlayerContorller>().OnHit(10);
-                Debug.Log("lklklk");
-            }
-        }
-
-        lineRenderer.SetPosition(0, launchPosition);
-        //lineRenderer.SetPosition(1, launchPosition + directionVector * lineDistance);
-    }
-
+   
+   
 }

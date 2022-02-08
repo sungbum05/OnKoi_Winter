@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1445706705999258079}
   - component: {fileID: 1445706705999258078}
   - component: {fileID: 6305997014753441467}
-  - component: {fileID: 1805661028285229878}
+  - component: {fileID: 5180587954587869165}
+  - component: {fileID: 4531366843756535784}
   m_Layer: 0
   m_Name: Enemy_Laser
   m_TagString: Enemy
@@ -30,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644914603279221532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.607941, y: 7.489916, z: -16.64516}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 644914604123740138}
   m_Father: {fileID: 0}
@@ -64,7 +65,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!33 &1445706705999258079
 MeshFilter:
@@ -129,14 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   uI_Manager: {fileID: 0}
-  lineRenderer: {fileID: 1805661028285229878}
-  laserTransform: {fileID: 644914603279221533}
-  laserActivateTime: 5
-  laserCooldownTime: 2
-  distance: 1000
   Bullet: {fileID: 4399571416262677520, guid: 737ef996d2e7847459bd4aa3a7f07ec6, type: 3}
   Range: 20
---- !u!120 &1805661028285229878
+--- !u!120 &5180587954587869165
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,7 +183,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.27586174
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -232,8 +228,24 @@ LineRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!114 &4531366843756535784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644914603279221532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfaa4ec0c2e035241bb896a089681207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startp: {x: 0, y: 0, z: 0}
+  endp: {x: 0, y: 0, z: 0}
+  Range: 0
+  speed: 0
 --- !u!1 &644914604123740142
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 644914604123740142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 644914603279221533}
   m_RootOrder: 0
