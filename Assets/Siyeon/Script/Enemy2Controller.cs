@@ -61,13 +61,13 @@ public class Enemy2Controller : Unit
     {
         Hp = 25;
         RateAttack = RateTime;
-        MoveSpeed = 1.0f;
+        MoveSpeed = 0.6f;
     }
 
     void Target()
     {
         TargetPosition = Player.transform.position - this.transform.position;
-        TargetPosition.Normalize();
+        //TargetPosition.Normalize();
     }
 
     void EnemyMove()

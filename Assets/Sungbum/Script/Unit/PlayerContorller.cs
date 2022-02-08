@@ -30,6 +30,11 @@ public class PlayerContorller : Unit
         PlayerMove();
         RotateToMouseDir();
         RefillShield();
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            CheatKey();
+        }
     }
 
     void SetState()
@@ -154,5 +159,11 @@ public class PlayerContorller : Unit
         base.OnHit(Damege);
 
         RefillTime = 2.0f;
+    }
+
+    void CheatKey()
+    {
+        Shield = 50000;
+        MaxShield = 50000;
     }
 }
