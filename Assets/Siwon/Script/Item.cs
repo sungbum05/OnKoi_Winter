@@ -46,7 +46,7 @@ public abstract class Item : MonoBehaviour
 
     protected virtual void Update()
     {
-        Itemname.transform.forward = Cam.transform.forward;
+        
         if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
         {
             Destroy(this.gameObject);

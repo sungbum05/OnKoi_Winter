@@ -12,20 +12,24 @@ public class Nuclear : Item
    
     private Vector3 NuclearScale;
     float Scale = 0.1f;
-    private Text Name;
+    public Text Name;
     private Item item;
-    private string name;
+
+    [SerializeField]
+    private string[] Objname;
 
     new void Start()
     {
-        Name = GetComponent<Text>();
-        name = this.gameObject.name;
-        Name.text = name;
+        int firstIdx = 0;
+
+        Objname = this.gameObject.name.Split('_');
+        Name.text = Objname[firstIdx];
         NuclearScale = Nuclearoj.transform.localScale;
     }
 
     new void Update()
     {
+        Name.transform.forward = Cam.transform.forward; //y = 0.5 // -13, -29
         base.Update();
         if (Itemuse == true)
         {
