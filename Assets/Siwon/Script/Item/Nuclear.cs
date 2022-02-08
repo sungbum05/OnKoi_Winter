@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class Nuclear : Item
 {
- 
-    public  GameObject Nuclearoj;
+
+    public GameObject Nuclearoj;
     ItemSpawner itemSpawner;
     SphereCollider NuclearojCollider;
-   
+
     private Vector3 NuclearScale;
     float Scale = 0.1f;
     public Text Name;
     private Item item;
+
+
+
 
     [SerializeField]
     private string[] Objname;
@@ -22,7 +25,7 @@ public class Nuclear : Item
     {
         NuclearojCollider = Nuclearoj.GetComponent<SphereCollider>();
         int firstIdx = 0;
-        
+
         Objname = this.gameObject.name.Split('_');
         Name.text = Objname[firstIdx];
         NuclearScale = Nuclearoj.transform.localScale;
@@ -35,11 +38,11 @@ public class Nuclear : Item
         if (Itemuse == true)
         {
             NuclearItem();
-
-            while(true)
+            while (true)
             {
-                NuclearScale = new Vector3(+Scale, +Scale, +Scale);
-                NuclearojCollider.radius += Scale;
+                Scale += 0.1f;
+                NuclearScale = new Vector3(Scale, Scale, Scale);
+                NuclearojCollider.radius = Scale;
                 if (Scale == 5)
                 {
                     break;
@@ -47,8 +50,9 @@ public class Nuclear : Item
             }
         }
         Itemuse = false;
+
     }
-    
+
     void NuclearItem()
     {
         Debug.Assert(Nuclearoj != null);
