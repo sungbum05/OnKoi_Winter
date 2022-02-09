@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class Bombing : Item
 {
-    public GameObject Mimissile;
+    
+    private void Start()
+    {
+        
+    }
     public GameObject mBoom;
+    SpawnItem spawnItem;
+    public void Missile()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            
+        }
+    }
 
 
 }
