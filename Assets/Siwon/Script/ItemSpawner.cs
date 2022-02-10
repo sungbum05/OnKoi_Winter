@@ -9,15 +9,16 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField]
     public List<GameObject> ItemMenu = new List<GameObject>();
 
-    public float Radius = 30;
+    
     private SpawnItem spawnItem;
-    public Vector3 ItemPosition;
+    
     
 
 
 
     void Start()
     {
+        
         SpawnItem();
     }
     IEnumerator Wait()
@@ -27,14 +28,16 @@ public class ItemSpawner : MonoBehaviour
     }
     public void SpawnItem()
     {
-        Vector3 spawn = Random.insideUnitSphere * Radius;
+
         //Debug.Assert(spawnItem.SpawnItem1(spawn) == null);
         //spawnItem.SpawnItem1(spawn);
-        ItemPosition = new Vector3(spawn.x, 0.1f, spawn.z) + transform.position;
-        Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], ItemPosition, Quaternion.identity);
+        
+        GameObject a = Instantiate(ItemMenu[Random.Range(0, ItemMenu.Count)], GetComponent<Item>().ItemPos(), Quaternion.identity);
+        //item.GetComponent<Item>().GetTranform(ItemPosition);
         StartCoroutine(Wait());
 
     }
+    
 }
 public class SpawnItem
 {
