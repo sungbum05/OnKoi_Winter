@@ -4476,6 +4476,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 644914603279221532, guid: 856f42833b5a40f459bb9a1f0badf74d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 644914603279221533, guid: 856f42833b5a40f459bb9a1f0badf74d, type: 3}
       propertyPath: m_RootOrder
       value: 14
