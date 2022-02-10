@@ -552,14 +552,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemMenu:
   - {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
-  - {fileID: 6237582144165396076, guid: be2a895af10f83a40b022531caaec6f8, type: 3}
+  - {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
   - {fileID: 6237582144165396076, guid: f69f19a09142ba640a8d5ad19ca9fb70, type: 3}
   - {fileID: 6237582144165396076, guid: 950ca1f0ea98e9540a513ddadf25e224, type: 3}
   - {fileID: 6237582144165396076, guid: c5f265653e6b82a4ab19178ec0ab9c39, type: 3}
   - {fileID: 6237582144165396076, guid: bb6103e7d735278409ab2eeb2a080b1b, type: 3}
   - {fileID: 6237582144165396076, guid: 461805acfd1ef75469487b24f1dd25b9, type: 3}
-  Radius: 15
-  ItemPosition: {x: 0, y: 0, z: 0}
+  Radius: 0
 --- !u!4 &1547799947
 Transform:
   m_ObjectHideFlags: 0

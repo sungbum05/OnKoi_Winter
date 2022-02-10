@@ -63,7 +63,7 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
         if(other.gameObject.CompareTag("Player") && RateAttack <= 0)
         {
             RateAttack = RateTime;
-            other.gameObject.GetComponent<PlayerContorller>().OnHit(10); // 플레이어 공격 
+            other.gameObject.GetComponent<PlayerContorller>().OnHit(10); // 플레이어 공격
         }
     }
 

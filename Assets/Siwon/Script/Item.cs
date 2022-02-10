@@ -39,22 +39,22 @@ public abstract class Item : MonoBehaviour
         ItemPosition = new Vector3(spawn.x, 0.1f, spawn.z) + transform.position;
         return ItemPosition;
     }
-    public void GetTranform(Vector3 pos)
-    {
-        endPos = pos;
-        StartCoroutine(Temp(1f));
-    }
+    //public void GetTranform(Vector3 pos)
+    //{
+    //    endPos = pos;
+    //    StartCoroutine(Temp(1f));
+    //}
 
-    IEnumerator Temp(float speed)
-    {
-        while (Vector3.Distance(transform.position, endPos) < 0.1f)
-        {
+    //IEnumerator Temp(float speed)
+    //{
+    //    while (Vector3.Distance(transform.position, endPos) < 0.1f)
+    //    {
 
-            yield return null;
-        }
-        transform.position = endPos;
+    //        yield return null;
+    //    }
+    //    transform.position = endPos;
 
-    }
+    //}
 
     protected virtual void Start()
     {
@@ -72,7 +72,7 @@ public abstract class Item : MonoBehaviour
 
     protected virtual void Update()
     {
-        
+
         if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
         {
             Destroy(this.gameObject);
