@@ -551,14 +551,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemMenu:
-  - {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
-  - {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
-  - {fileID: 6237582144165396076, guid: f69f19a09142ba640a8d5ad19ca9fb70, type: 3}
-  - {fileID: 6237582144165396076, guid: 950ca1f0ea98e9540a513ddadf25e224, type: 3}
-  - {fileID: 6237582144165396076, guid: c5f265653e6b82a4ab19178ec0ab9c39, type: 3}
-  - {fileID: 6237582144165396076, guid: bb6103e7d735278409ab2eeb2a080b1b, type: 3}
-  - {fileID: 6237582144165396076, guid: 461805acfd1ef75469487b24f1dd25b9, type: 3}
-  Radius: 0
+  - itemName: "\uC548\uB098\uC634"
+    itemObject: {fileID: 0}
+    itemGrade: 4
+    itemType: 0
+    weight: 70
+  - itemName: DoubleScore
+    itemObject: {fileID: 6237582144165396076, guid: be2a895af10f83a40b022531caaec6f8, type: 3}
+    itemGrade: 3
+    itemType: 2
+    weight: 4
+  - itemName: DoubleDamage
+    itemObject: {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
+    itemGrade: 3
+    itemType: 2
+    weight: 4
+  - itemName: "\uC0F7\uAC74"
+    itemObject: {fileID: 6237582144165396076, guid: bb6103e7d735278409ab2eeb2a080b1b, type: 3}
+    itemGrade: 2
+    itemType: 1
+    weight: 3
+  - itemName: "\uB2E8\uCD1D"
+    itemObject: {fileID: 0}
+    itemGrade: 2
+    itemType: 1
+    weight: 3
+  - itemName: "\uC18C\uCD1D"
+    itemObject: {fileID: 0}
+    itemGrade: 2
+    itemType: 1
+    weight: 3
+  - itemName: "\uD3ED\uACA9"
+    itemObject: {fileID: 0}
+    itemGrade: 2
+    itemType: 2
+    weight: 3
+  - itemName: "\uD130\uB81B"
+    itemObject: {fileID: 0}
+    itemGrade: 2
+    itemType: 2
+    weight: 3
+  - itemName: "\uD575"
+    itemObject: {fileID: 6237582144165396076, guid: 950ca1f0ea98e9540a513ddadf25e224, type: 3}
+    itemGrade: 0
+    itemType: 2
+    weight: 1
+  - itemName: "\uC911\uAE30\uAD00\uCD1D"
+    itemObject: {fileID: 0}
+    itemGrade: 1
+    itemType: 1
+    weight: 2
+  - itemName: "\uB300\uC804\uCC28 \uB85C\uCF13"
+    itemObject: {fileID: 0}
+    itemGrade: 1
+    itemType: 1
+    weight: 2
+  - itemName: "\uC2AC\uB85C\uC6B0"
+    itemObject: {fileID: 0}
+    itemGrade: 1
+    itemType: 2
+    weight: 2
+  total: 0
+  result: []
 --- !u!4 &1547799947
 Transform:
   m_ObjectHideFlags: 0

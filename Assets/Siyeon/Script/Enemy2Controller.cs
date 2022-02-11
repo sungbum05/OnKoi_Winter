@@ -11,7 +11,7 @@ public class Enemy2Controller : Unit
     UI_Manager uI_Manager;
 
     Vector3 TargetPosition;
-
+    ItemSpawner itemSpawner;
     private float RateAttack;
     private float RateTime = 0.8f;
     private float RateCurTime = 0;
@@ -25,6 +25,8 @@ public class Enemy2Controller : Unit
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
         uI_Manager.AddScore();
+        itemSpawner.ResultSelect();
+
     }
 
     // Start is called before the first frame update

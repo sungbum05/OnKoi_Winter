@@ -11,7 +11,7 @@ public abstract class Item : MonoBehaviour
     public bool Itemuse = false;
     private Camera cam;
     public Vector3 ItemPosition;
-    public float Radius = 30;
+    
     public Camera Cam
     {
         get
@@ -26,19 +26,10 @@ public abstract class Item : MonoBehaviour
 
     [SerializeField]
     protected Text Itemname;
-    private Text Key;
-    Vector3 endPos;
-    public enum ItemType
-    {
-        Gun,
-        Item
-    }
-    public Vector3 ItemPos()
-    {
-        Vector3 spawn = Random.insideUnitSphere * Radius;
-        ItemPosition = new Vector3(spawn.x, 0.1f, spawn.z) + transform.position;
-        return ItemPosition;
-    }
+    
+    
+   
+   
     //public void GetTranform(Vector3 pos)
     //{
     //    endPos = pos;
@@ -65,8 +56,7 @@ public abstract class Item : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
-            HitPlayer = true;
+            
         }
     }
 
