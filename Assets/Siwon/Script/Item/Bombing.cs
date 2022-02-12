@@ -17,7 +17,7 @@ public class Bombing : Item
     {
         for (int i = 0; i < 8; i++)
         {
-            Vector3 MissilePos = Random.insideUnitSphere * Radius;
+            Vector3 MissilePos = this.transform.position + Random.insideUnitSphere * Radius;
             Instantiate(mBoom, MissilePos, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);
             StartCoroutine(MissileDel());
@@ -31,6 +31,4 @@ public class Bombing : Item
     {
         yield return new WaitForSeconds(0.15f);
     }
-
-
 }
