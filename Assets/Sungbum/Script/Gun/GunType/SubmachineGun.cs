@@ -22,10 +22,10 @@ public class SubmachineGun : SetGun
     {
         base.RateAttackDel();
 
-        if (Input.GetMouseButton(0) && RateFire <= 0.0f)
+        if (Input.GetMouseButton(0) && MaxRateFire <= 0.0f)
         {
             //SoundMgr.In.PlaySound("1");
-            RateFire = 0.05f;
+            MaxRateFire = RateFire;
 
             RaycastHit hitInfo;
 
