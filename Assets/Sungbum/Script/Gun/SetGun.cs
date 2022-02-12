@@ -17,6 +17,7 @@ public class SetGun : MonoBehaviour
 
     public float Damege { get; set; }
     public float RateFire { get; set; }
+    public float MaxRateFire { get; set; }
     public float BulletSpread { get; set; }
     public float BulletSpeed { get; set; }
     public float HeatCapacity { get; set; }
@@ -92,9 +93,9 @@ public class SetGun : MonoBehaviour
 
     protected void RateAttackDel()
     {
-        if (RateFire >= 0)
+        if (MaxRateFire >= 0)
         {
-            RateFire -= Time.deltaTime;
+            MaxRateFire -= Time.deltaTime;
         }
     }
 
@@ -120,7 +121,7 @@ public class SetGun : MonoBehaviour
     protected virtual void SetShotGun()
     {
         Damege = 7.0f;
-        RateFire = 0.9f;
+        RateFire = 0.6f;
         BulletSpread = 0.35f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
@@ -131,7 +132,7 @@ public class SetGun : MonoBehaviour
     protected virtual void SetSubmachineGun()
     {
         Damege = 8.0f;
-        RateFire = 0.02f;
+        RateFire = 0.05f;
         BulletSpread = 0.2f;
         BulletSpeed = 220.0f;
         HeatCapacity = 50.0f;
@@ -142,7 +143,7 @@ public class SetGun : MonoBehaviour
     protected virtual void SetAssaultRifle()
     {
         Damege = 20.0f;
-        RateFire = 0.5f;
+        RateFire = 0.16f;
         BulletSpread = 0.1f;
         BulletSpeed = 180.0f;
         HeatCapacity = 100.0f;
@@ -152,10 +153,10 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SetH_machinegun()
     {
-        Damege = 20.0f;
-        RateFire = 0.5f;
-        BulletSpread = 0.1f;
-        BulletSpeed = 180.0f;
+        Damege = 30.0f;
+        RateFire = 0.14f;
+        BulletSpread = 0.3f;
+        BulletSpeed = 200.0f;
         HeatCapacity = 100.0f;
 
         Ammo = 15;
@@ -166,7 +167,7 @@ public class SetGun : MonoBehaviour
         Damege = 20.0f;
         RateFire = 0.5f;
         BulletSpread = 0.1f;
-        BulletSpeed = 180.0f;
+        BulletSpeed = 30;
         HeatCapacity = 100.0f;
 
         Ammo = 15;

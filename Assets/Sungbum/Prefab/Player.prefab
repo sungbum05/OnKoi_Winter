@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &552327616
 Transform:
   m_ObjectHideFlags: 0
@@ -1224,17 +1224,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1027004332}
     m_Modifications:
-    - target: {fileID: 3701057741365097393, guid: 16bcc2c7398c8b4438bac13b3ff850ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.01028
-      objectReference: {fileID: 0}
     - target: {fileID: 8279310031866589389, guid: 16bcc2c7398c8b4438bac13b3ff850ba, type: 3}
       propertyPath: m_Name
-      value: AT_Rocket_5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8279310031866589389, guid: 16bcc2c7398c8b4438bac13b3ff850ba, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: ATRocket_5
       objectReference: {fileID: 0}
     - target: {fileID: 8767897382786181751, guid: 16bcc2c7398c8b4438bac13b3ff850ba, type: 3}
       propertyPath: m_RootOrder
@@ -1521,7 +1513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4315648145429617426, guid: 5ea7f2368b5fd8d4799cf84cd61da7fc, type: 3}
       propertyPath: m_Name
-      value: H_machinegun_4
+      value: Hmachinegun_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4315648145429617426, guid: 5ea7f2368b5fd8d4799cf84cd61da7fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea7f2368b5fd8d4799cf84cd61da7fc, type: 3}
@@ -1530,3 +1526,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3508185035533943208, guid: 5ea7f2368b5fd8d4799cf84cd61da7fc, type: 3}
   m_PrefabInstance: {fileID: 8839808245247521196}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &68615226514287042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8817638969893001326, guid: 5ea7f2368b5fd8d4799cf84cd61da7fc, type: 3}
+  m_PrefabInstance: {fileID: 8839808245247521196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4704306528594422462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4315648145429617426, guid: 5ea7f2368b5fd8d4799cf84cd61da7fc, type: 3}
+  m_PrefabInstance: {fileID: 8839808245247521196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1213312899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4704306528594422462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d064f3c801e7241bedfc33f0125d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunName: []
+  EnemyType: []
+  GunNum: 0
+  GunParticle: {fileID: 1999723261588981601, guid: 092d0d1df4ad8b5478d786ca1cc42f28, type: 3}
+  AmmoType: {fileID: 5803814905810553269, guid: 416b2709ebb862247af82cefe0c8a318, type: 3}
+  BulletZip: {fileID: 0}
+  ShootPosition: {fileID: 68615226514287042}

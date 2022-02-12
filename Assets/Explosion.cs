@@ -7,8 +7,7 @@ public class Explosion : MonoBehaviour
 {
     private Renderer ExplosionRender;
 
-    [SerializeField]
-    private int ExplosionScale = 10;
+    public int ExplosionScale = 10;
 
     [SerializeField]
     private float ExplosionSpeed = 1.0f;
@@ -40,8 +39,6 @@ public class Explosion : MonoBehaviour
 
             if(this.gameObject.transform.localScale.x >= ExplosionScale - 0.5f)
             {
-                Debug.Log(Cur_FresnelEffect);
-
                 ExplosionRender.material.SetFloat("_FresnelEffect", Cur_FresnelEffect += (Time.deltaTime * ExplosionDesTime));
 
                 if(Cur_FresnelEffect > 0.0f)
