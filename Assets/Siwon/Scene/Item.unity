@@ -551,66 +551,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemMenu:
-  - itemName: "\uC548\uB098\uC634"
+  - itemName: "\uC751 \uC548\uB098\uC640"
     itemObject: {fileID: 0}
     itemGrade: 4
     itemType: 0
     weight: 70
-  - itemName: DoubleScore
-    itemObject: {fileID: 6237582144165396076, guid: be2a895af10f83a40b022531caaec6f8, type: 3}
+  - itemName: Double Score
+    itemObject: {fileID: 0}
     itemGrade: 3
     itemType: 2
     weight: 4
-  - itemName: DoubleDamage
-    itemObject: {fileID: 6237582144165396076, guid: b3ff0302e9f5a7546b6855ab40b949bb, type: 3}
+  - itemName: Double Damege
+    itemObject: {fileID: 0}
     itemGrade: 3
     itemType: 2
     weight: 4
   - itemName: "\uC0F7\uAC74"
-    itemObject: {fileID: 6237582144165396076, guid: bb6103e7d735278409ab2eeb2a080b1b, type: 3}
-    itemGrade: 2
-    itemType: 1
-    weight: 3
-  - itemName: "\uB2E8\uCD1D"
     itemObject: {fileID: 0}
     itemGrade: 2
     itemType: 1
     weight: 3
-  - itemName: "\uC18C\uCD1D"
+  - itemName: "\uAE30\uAD00\uB2E8\uCD1D"
     itemObject: {fileID: 0}
     itemGrade: 2
     itemType: 1
     weight: 3
-  - itemName: "\uD3ED\uACA9"
+  - itemName: "\uB3CC\uACA9\uC18C\uCD1D"
     itemObject: {fileID: 0}
     itemGrade: 2
-    itemType: 2
+    itemType: 1
     weight: 3
   - itemName: "\uD130\uB81B"
     itemObject: {fileID: 0}
     itemGrade: 2
     itemType: 2
     weight: 3
-  - itemName: "\uD575"
-    itemObject: {fileID: 6237582144165396076, guid: 950ca1f0ea98e9540a513ddadf25e224, type: 3}
-    itemGrade: 0
+  - itemName: "\uBBF8\uC0AC\uC77C \uD3ED\uACA9"
+    itemObject: {fileID: 0}
+    itemGrade: 2
     itemType: 2
-    weight: 1
+    weight: 3
   - itemName: "\uC911\uAE30\uAD00\uCD1D"
     itemObject: {fileID: 0}
     itemGrade: 1
     itemType: 1
     weight: 2
-  - itemName: "\uB300\uC804\uCC28 \uB85C\uCF13"
+  - itemName: "\uB85C\uCF13"
     itemObject: {fileID: 0}
     itemGrade: 1
     itemType: 1
     weight: 2
-  - itemName: "\uC2AC\uB85C\uC6B0"
+  - itemName: TimeSlow
     itemObject: {fileID: 0}
     itemGrade: 1
     itemType: 2
     weight: 2
+  - itemName: "\uD575\uD3ED\uBC1C"
+    itemObject: {fileID: 0}
+    itemGrade: 0
+    itemType: 2
+    weight: 1
   total: 0
   result: []
 --- !u!4 &1547799947

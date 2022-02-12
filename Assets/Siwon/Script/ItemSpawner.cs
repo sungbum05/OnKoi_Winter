@@ -14,7 +14,6 @@ public class ItemSpawner : MonoBehaviour
     public void ResultSelect()
     {
         result.Add(RandomItem());
-        
     }
     public ItemList RandomItem()
     {
@@ -33,13 +32,6 @@ public class ItemSpawner : MonoBehaviour
         }
         return null;
     }
-
-
-
-
-
-
-
     void Start()
     {
         for (int i = 0; i < ItemMenu.Count; i++)
