@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5180587954587869165}
   - component: {fileID: 4531366843756535784}
   m_Layer: 0
-  m_Name: Enemy_Laser
+  m_Name: Enemy_4_
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,10 +242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa4ec0c2e035241bb896a089681207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   startp: {x: 0, y: 0, z: 0}
   endp: {x: 0, y: 0, z: 0}
   Range: 0
   speed: 0
+  islerp: 0
+  rot: 0
 --- !u!1 &644914604123740142
 GameObject:
   m_ObjectHideFlags: 0

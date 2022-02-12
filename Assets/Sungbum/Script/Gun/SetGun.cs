@@ -10,7 +10,9 @@ public class SetGun : MonoBehaviour
         ShotGun = 1,
         SubmachineGun = 2,
         AssaultRifle = 3,
-        Turret = 4,
+        H_machinegun = 4,
+        AT_Rocket = 5,
+        Turret = 6,
     }
 
     public float Damege { get; set; }
@@ -74,6 +76,14 @@ public class SetGun : MonoBehaviour
                 SetAssaultRifle();
                 break;
 
+            case (int)GunType.H_machinegun:
+                SetH_machinegun();
+                break;
+
+            case (int)GunType.AT_Rocket:
+                SetAT_Rocket();
+                break;
+
             case (int)GunType.Turret:
                 SetTurret();
                 break;
@@ -130,6 +140,28 @@ public class SetGun : MonoBehaviour
     }
 
     protected virtual void SetAssaultRifle()
+    {
+        Damege = 20.0f;
+        RateFire = 0.5f;
+        BulletSpread = 0.1f;
+        BulletSpeed = 180.0f;
+        HeatCapacity = 100.0f;
+
+        Ammo = 15;
+    }
+
+    protected virtual void SetH_machinegun()
+    {
+        Damege = 20.0f;
+        RateFire = 0.5f;
+        BulletSpread = 0.1f;
+        BulletSpeed = 180.0f;
+        HeatCapacity = 100.0f;
+
+        Ammo = 15;
+    }
+
+    protected virtual void SetAT_Rocket()
     {
         Damege = 20.0f;
         RateFire = 0.5f;

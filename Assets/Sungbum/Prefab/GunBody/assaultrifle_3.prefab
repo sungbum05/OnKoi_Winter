@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2655258172991113760}
-  - component: {fileID: 3427960123185090715}
   m_Layer: 0
   m_Name: assaultrifle_3
   m_TagString: Untagged
@@ -24,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427960123185090714}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 17, y: 17, z: 17}
   m_Children:
@@ -35,24 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3427960123185090715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427960123185090714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c50b7a29d8677941b0d1c34767c9044, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GunName: []
-  GunNum: 0
-  GunParticle: {fileID: 1999723261588981601, guid: 092d0d1df4ad8b5478d786ca1cc42f28, type: 3}
-  AmmoType: {fileID: 5803814905810553269, guid: 416b2709ebb862247af82cefe0c8a318, type: 3}
-  BulletZip: {fileID: 0}
-  ShootPosition: {fileID: 7937672830602974182}
 --- !u!1 &3768366168080920294
 GameObject:
   m_ObjectHideFlags: 0

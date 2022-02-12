@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 1870856054114999299}
   - component: {fileID: 1870856054114999297}
   m_Layer: 0
-  m_Name: turret_4_
+  m_Name: turret_6_
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 1870856054114999310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.234, y: 0.497, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1.3333334}
   m_Children:
   - {fileID: 1870856054115287074}
   - {fileID: 1870856054115287076}
