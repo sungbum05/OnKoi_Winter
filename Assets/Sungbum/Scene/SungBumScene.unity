@@ -2189,6 +2189,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1213312898, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: AmmoType
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213312898, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: BulletZip
+      value: 
+      objectReference: {fileID: 1213312896}
+    - target: {fileID: 1213312898, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: GunParticle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213312899, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: BulletZip
+      value: 
+      objectReference: {fileID: 606898102}
     - target: {fileID: 1753217469, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
       propertyPath: StatPan
       value: 
@@ -2253,12 +2269,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4070286723737580175, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4636663741548839322, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
       propertyPath: BulletZip
       value: 
       objectReference: {fileID: 606898102}
+    - target: {fileID: 4701884526597590673, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: m_Name
+      value: Missile
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734160219513275658, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: AmmoType
+      value: 
+      objectReference: {fileID: 6621581961705058142, guid: 782f3153adc463f4ab51aa56d067b31a, type: 3}
+    - target: {fileID: 6734160219513275658, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: BulletZip
+      value: 
+      objectReference: {fileID: 606898102}
+    - target: {fileID: 6734160219513275658, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: GunParticle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734160219513275658, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: ShootPosition
+      value: 
+      objectReference: {fileID: 1366280626}
+    - target: {fileID: 7810953538367450482, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+--- !u!1 &1213312896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3427960121769728581, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+  m_PrefabInstance: {fileID: 1213312895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1233706145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2611,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3073096dd9f9ba8439c4e106a5d927b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1366280626 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8141272267337828243, guid: 615c56bde1ba1034782d8bcd1f8644c8, type: 3}
+  m_PrefabInstance: {fileID: 1213312895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1368920655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4464,10 +4518,6 @@ PrefabInstance:
     - target: {fileID: 3602988083110670085, guid: 797fa493a6681b4459d4d436e97465f8, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3602988083110670086, guid: 797fa493a6681b4459d4d436e97465f8, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3602988083110670105, guid: 797fa493a6681b4459d4d436e97465f8, type: 3}
       propertyPath: m_RootOrder

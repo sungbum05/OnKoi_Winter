@@ -22,10 +22,10 @@ public class ShotGun : SetGun
     {
         base.RateAttackDel();
 
-        if (Input.GetMouseButton(0) && RateFire <= 0.0f)
+        if (Input.GetMouseButton(0) && MaxRateFire <= 0.0f)
         {
             //SoundMgr.In.PlaySound("1");
-            RateFire = 0.6f;
+            MaxRateFire = RateFire;
 
             StartCoroutine("CreatedBullet");
             //RaycastHit hitInfo;

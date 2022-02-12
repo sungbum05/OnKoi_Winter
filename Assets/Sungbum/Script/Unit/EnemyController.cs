@@ -50,7 +50,6 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
 
     void EnemyMove()
     {
-        Debug.Log("Move");
         this.transform.Find("Enemy_Sprite").Rotate(270 * Time.deltaTime, 0.0f, 100 * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(TargetPosition);
 
