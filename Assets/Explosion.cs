@@ -16,18 +16,15 @@ public class Explosion : MonoBehaviour
     [SerializeField]
     private float ExplosionDesTime = 1.5f;
 
+    [SerializeField]
+    private string[] EnemyType;
+
     // Start is called before the first frame update
     void Start()
     {
         ExplosionRender = this.GetComponent<Renderer>();
 
         StartCoroutine("StartExplosion");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator StartExplosion()
@@ -56,6 +53,40 @@ public class Explosion : MonoBehaviour
                 {
                     Destroy(this.gameObject);
                 }
+            }
+        }
+    }
+
+    private int GetEnemyType(GameObject gameObject)
+    {
+        int SecondIdx = 1;
+
+        EnemyType = gameObject.transform.gameObject.name.Split('_');
+
+        return int.Parse(EnemyType[SecondIdx]);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            switch(GetEnemyType(other.gameObject))
+            {
+                case 1:
+                    other.gameObject.GetComponent<EnemyController>().OnHit(99999);
+                    break;
+
+                case 2:
+                    other.gameObject.GetComponent<Enemy2Controller>().OnHit(99999);
+                    break;
+
+                case 3:
+                    //other.gameObject.GetComponent<Enemy3Controller>().OnHit(99999);
+                    break;
+
+                case 4:
+                    other.gameObject.GetComponent<EnemyLaserController>().OnHit(99999);
+                    break;
             }
         }
     }

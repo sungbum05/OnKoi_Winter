@@ -40,7 +40,7 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     {
         Hp = 35;
         RateAttack = RateTime;
-        MoveSpeed = 0.9f;
+        MoveSpeed = 0.8f;
     }
 
     void Target()
@@ -52,10 +52,11 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     {
         Debug.Log("Move");
         this.transform.Find("Enemy_Sprite").Rotate(270 * Time.deltaTime, 0.0f, 100 * Time.deltaTime);
-        transform.rotation = Quaternion.LookRotation(TargetPosition).normalized;
+        transform.rotation = Quaternion.LookRotation(TargetPosition);
 
         Target();
         transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
+        this.GetComponent<Rigidbody>().velocity = TargetPosition * Time.deltaTime * MoveSpeed;
     }
 
     private void OnCollisionStay(Collision other)

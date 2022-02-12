@@ -77,6 +77,7 @@ public class EnemyLaserController : Unit
 
         Target();
         transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
+        this.GetComponent<Rigidbody>().velocity = TargetPosition * Time.deltaTime * MoveSpeed;
     }
 
     private void OnCollisionStay(Collision other)

@@ -16,13 +16,11 @@ public class StatInfoView : MonoBehaviour
         button.onClick.AddListener(
             () => 
             { 
-                
                 StatManager.Instance.ApplyStat(statInfo);
                 Player.SetLevelState();
                 this.gameObject.transform.parent.gameObject.SetActive(false);
                 
                 Debug.Log("½ÇÇà");
-
             }
             );
         
