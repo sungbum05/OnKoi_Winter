@@ -231,7 +231,7 @@ public class SetGun : MonoBehaviour
         Damege = 20.0f;
         RateFire = 0.5f;
         BulletSpread = 0.1f;
-        BulletSpeed = 30;
+        BulletSpeed = 80;
         HeatCapacity = 100.0f;
         HeatPlus = 200.0f;
 
