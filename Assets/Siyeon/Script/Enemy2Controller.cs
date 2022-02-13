@@ -26,7 +26,6 @@ public class Enemy2Controller : Unit
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
         uI_Manager.AddScore();
         itemSpawner.ResultSelect();
-
     }
 
     // Start is called before the first frame update

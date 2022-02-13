@@ -7,6 +7,9 @@ public class ShotGun : SetGun
     public Transform ShootPosition;
     private int ShotGunCnt = 0;
 
+    float PlusBeforeTime = 2.0f;
+    float BeforeFireTime = 2.0f;
+
     private void Awake()
     {
         base.SettingGun();
@@ -16,14 +19,30 @@ public class ShotGun : SetGun
     void Update()
     {
         FireGun();
+
+        if (IsMaxCap == true || BeforeFireTime <= 0)
+        {
+            MinusHeatCapacity();
+        }
     }
 
     void FireGun()
     {
         base.RateAttackDel();
+        BeforeFireTime -= Time.deltaTime;
 
-        if (Input.GetMouseButton(0) && MaxRateFire <= 0.0f)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
+            base.ChangeBasicGun();
+        }
+
+        if (Input.GetMouseButton(0) && MaxRateFire <= 0.0f && IsMaxCap == false)
+        {
+            EmptyAmmo();
+
+            PlusHeatCapacity();
+            BeforeFireTime = PlusBeforeTime;
+
             //SoundMgr.In.PlaySound("1");
             MaxRateFire = RateFire;
 

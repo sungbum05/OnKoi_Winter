@@ -20,9 +20,16 @@ public class SetGun : MonoBehaviour
     public float MaxRateFire { get; set; }
     public float BulletSpread { get; set; }
     public float BulletSpeed { get; set; }
+
     public float HeatCapacity { get; set; }
+    public float CurHeatCapacity { get; set; }
+    public float HeatPlus { get; set; }
+
+    [SerializeField]
+    protected bool IsMaxCap = false;
 
     public int Ammo { get; set; }
+    public int CurAmmo { get; set; }
 
     [SerializeField]
     private string[] GunName;
@@ -39,6 +46,8 @@ public class SetGun : MonoBehaviour
     public GameObject AmmoType;
     public GameObject BulletZip;
 
+    public GameObject BasicGun;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +62,8 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SettingGun()
     {
+        BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
+
         int SecondIdx = 1;
 
         GunName = gameObject.name.Split('_');
@@ -91,6 +102,49 @@ public class SetGun : MonoBehaviour
         }
     }
 
+    protected void EmptyAmmo()
+    {
+        CurAmmo--;
+
+        if(CurAmmo <= 0)
+        {
+            ChangeBasicGun();
+        }
+    }
+
+    protected void ChangeBasicGun()
+    {
+        CurAmmo = Ammo;
+
+        BasicGun.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
+    }
+
+    protected void PlusHeatCapacity()
+    {
+        CurHeatCapacity += HeatPlus;
+
+        if(HeatCapacity <= CurHeatCapacity)
+        {
+            CurHeatCapacity = HeatCapacity;
+            IsMaxCap = true;
+        }
+    }
+
+    protected void MinusHeatCapacity()
+    {
+        if(CurHeatCapacity >= 0)
+        {
+            CurHeatCapacity -= 20 * Time.deltaTime;
+        }
+
+        if(CurHeatCapacity <= 0)
+        {
+            CurHeatCapacity = 0;
+            IsMaxCap = false;
+        }
+    }
+
     protected void RateAttackDel()
     {
         if (MaxRateFire >= 0)
@@ -114,8 +168,10 @@ public class SetGun : MonoBehaviour
         RateFire = 0.5f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
+        HeatPlus = 0.5f;
 
-        Ammo = 99999;
+        Ammo = 99999999;
+        CurAmmo = Ammo;
     }
 
     protected virtual void SetShotGun()
@@ -125,8 +181,10 @@ public class SetGun : MonoBehaviour
         BulletSpread = 0.35f;
         BulletSpeed = 200.0f;
         HeatCapacity = 50.0f;
+        HeatPlus = 3.0f;
 
-        Ammo = 12;
+        Ammo = 75;
+        CurAmmo = Ammo;
     }
 
     protected virtual void SetSubmachineGun()
@@ -136,8 +194,10 @@ public class SetGun : MonoBehaviour
         BulletSpread = 0.2f;
         BulletSpeed = 220.0f;
         HeatCapacity = 50.0f;
+        HeatPlus = 0.5f;
 
-        Ammo = 15;
+        Ammo = 420;
+        CurAmmo = Ammo;
     }
 
     protected virtual void SetAssaultRifle()
@@ -147,8 +207,10 @@ public class SetGun : MonoBehaviour
         BulletSpread = 0.1f;
         BulletSpeed = 180.0f;
         HeatCapacity = 100.0f;
+        HeatPlus = 1.0f;
 
-        Ammo = 15;
+        Ammo = 320;
+        CurAmmo = Ammo;
     }
 
     protected virtual void SetH_machinegun()
@@ -158,8 +220,10 @@ public class SetGun : MonoBehaviour
         BulletSpread = 0.3f;
         BulletSpeed = 200.0f;
         HeatCapacity = 100.0f;
+        HeatPlus = 5.0f;
 
-        Ammo = 15;
+        Ammo = 400;
+        CurAmmo = Ammo;
     }
 
     protected virtual void SetAT_Rocket()
@@ -169,8 +233,10 @@ public class SetGun : MonoBehaviour
         BulletSpread = 0.1f;
         BulletSpeed = 30;
         HeatCapacity = 100.0f;
+        HeatPlus = 200.0f;
 
-        Ammo = 15;
+        Ammo = 5;
+        CurAmmo = Ammo;
     }
 
     protected virtual void SetTurret()

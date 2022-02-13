@@ -9,6 +9,15 @@ public class UI_Manager : MonoBehaviour
     [SerializeField]
     GameObject Player;
 
+    [SerializeField]
+    GameObject KindGun;
+
+    [SerializeField]
+    GameObject CurGun;
+
+    [SerializeField]
+    private List<GameObject> KindsGun = new List<GameObject>();
+
     float Score { get; set; }
 
     [Header("Score & Level")]
@@ -21,6 +30,11 @@ public class UI_Manager : MonoBehaviour
     public Text Shield;
     public Slider HpBar;
     public Slider ShieldBar;
+
+    [Header("HeatCap & Ammo")]
+    public Text Ammo;
+    public Slider HeatCapBar;
+    public Slider AmmoBar;
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +66,8 @@ public class UI_Manager : MonoBehaviour
 
         ExpBar.maxValue = Player.GetComponent<PlayerContorller>().MaxExp;
         ExpBar.value = Player.GetComponent<PlayerContorller>().CurExp;
+
+        SetGunKinds();
     }
 
     void UpdateSet()
@@ -67,6 +83,8 @@ public class UI_Manager : MonoBehaviour
 
         ExpBar.maxValue = Player.GetComponent<PlayerContorller>().MaxExp;
         ExpBar.value = Player.GetComponent<PlayerContorller>().CurExp;
+
+        GetCurGunInfo();
     }
 
     void GoGameOver()
@@ -74,6 +92,41 @@ public class UI_Manager : MonoBehaviour
         if(Player == null)
         {
             SceneManager.LoadScene("GameOverScene");
+        }
+    }
+
+    void SetGunKinds()
+    {
+        for (int i = 0; i < KindGun.transform.GetChildCount(); i++)
+        {
+            KindsGun.Add(KindGun.transform.GetChild(i).gameObject);
+        }
+    }
+
+    public void GetCurGunInfo()
+    {
+        foreach(GameObject GunObj in KindsGun)
+        {
+            if(GunObj.active)
+            {
+                CurGun = GunObj;
+
+                AmmoBar.maxValue = GunObj.GetComponent<SetGun>().Ammo;
+                AmmoBar.value = GunObj.GetComponent<SetGun>().CurAmmo;
+
+                HeatCapBar.maxValue = GunObj.GetComponent<SetGun>().HeatCapacity;
+                HeatCapBar.value = GunObj.GetComponent<SetGun>().CurHeatCapacity;
+
+                if (GunObj.name == GunObj.GetComponent<SetGun>().BasicGun.name)
+                {
+                    Ammo.text = $"¡Ä";
+                }
+
+                else
+                {
+                    Ammo.text = $"{AmmoBar.value}/{AmmoBar.maxValue}";
+                }
+            }
         }
     }
 
