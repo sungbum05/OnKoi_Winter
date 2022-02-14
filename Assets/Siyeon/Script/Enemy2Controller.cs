@@ -24,7 +24,7 @@ public class Enemy2Controller : Unit
     private void OnDestroy()
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
-        uI_Manager.AddScore(150);
+        uI_Manager.AddScore(150 + PlusScore)/*+값 넣어주면 될듯*/;
         itemSpawner.ResultSelect();
     }
 
