@@ -130,8 +130,8 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    public void AddScore()
+    public void AddScore(int PlusScore)
     {
-        Score += 150;
+        Score += PlusScore;
     }
 }

@@ -24,7 +24,7 @@ public class Enemy2Controller : Unit
     private void OnDestroy()
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
-        uI_Manager.AddScore();
+        uI_Manager.AddScore(150);
         itemSpawner.ResultSelect();
     }
 
