@@ -24,7 +24,7 @@ public class EnemyLaserController : Unit
     private void OnDestroy()
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
-        uI_Manager.AddScore();
+        uI_Manager.AddScore(150)/*+값 넣어주면 될듯*/;
     }
 
     // Start is called before the first frame update
