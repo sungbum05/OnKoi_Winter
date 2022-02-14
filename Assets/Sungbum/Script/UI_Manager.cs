@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class UI_Manager : MonoBehaviour
 {
+    DoubleScore doubleScore;
     [SerializeField]
     GameObject Player;
 
@@ -132,6 +133,10 @@ public class UI_Manager : MonoBehaviour
 
     public void AddScore(int PlusScore)
     {
+        if(doubleScore.isDoubleScore == true)
+        {
+            
+        }
         Score += PlusScore;
     }
 }
