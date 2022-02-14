@@ -9,6 +9,7 @@ public class DoubleScore : MonoBehaviour
     {
         if(other.tag == "player")
         {
+            Destroy(this.gameObject);
             isDoubleScore = true;
             StartCoroutine(DoubleScoreWait());
         }

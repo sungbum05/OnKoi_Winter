@@ -19,7 +19,7 @@ public class Bombing : Item
         for (int i = 0; i < 8; i++)
         {
             Vector3 MissilePos = this.transform.position + Random.insideUnitSphere * Radius;
-            //Mpos = (MissilePos.x, 1f, MissilePos.z);
+            Mpos = new Vector3(MissilePos.x, 1f, MissilePos.z);
             Instantiate(mBoom, Mpos, Quaternion.Euler(0, 0, 0));
             Destroy(gameObject);
             StartCoroutine(MissileDel());

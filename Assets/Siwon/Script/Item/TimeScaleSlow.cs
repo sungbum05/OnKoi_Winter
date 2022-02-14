@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeScaleSlow : Item
+public class TimeScaleSlow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag == "player")
+        {
+            Time.timeScale = 0.3f;
+            StartCoroutine(TimeScaleWait());
+        }
+        Time.timeScale = 1f;
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator TimeScaleWait()
     {
-        
+        yield return new WaitForSeconds(20f);
     }
 }

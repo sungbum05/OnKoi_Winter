@@ -90,7 +90,7 @@ public class UI_Manager : MonoBehaviour
 
     void GoGameOver()
     {
-        if(Player == null)
+        if (Player == null)
         {
             SceneManager.LoadScene("GameOverScene");
         }
@@ -106,9 +106,9 @@ public class UI_Manager : MonoBehaviour
 
     public void GetCurGunInfo()
     {
-        foreach(GameObject GunObj in KindsGun)
+        foreach (GameObject GunObj in KindsGun)
         {
-            if(GunObj.active)
+            if (GunObj.active)
             {
                 CurGun = GunObj;
 
@@ -133,10 +133,13 @@ public class UI_Manager : MonoBehaviour
 
     public void AddScore(int PlusScore)
     {
-        if(doubleScore.isDoubleScore == true)
+        if (doubleScore.isDoubleScore == true)
         {
-            
+            Score += (PlusScore + PlusScore);
         }
-        Score += PlusScore;
+        else
+        {
+            Score += PlusScore;
+        }
     }
 }

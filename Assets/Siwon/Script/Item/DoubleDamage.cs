@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class DoubleDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    SetGun setGun;
+    
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "player")
+        {
+            Destroy(this.gameObject);
+            setGun.Damege *= 2;
+            StartCoroutine(isDoubleDamageWait());
+        }
+        setGun.Damege /= 2;
+    }
+    IEnumerator isDoubleDamageWait()
+    {
+        yield return new WaitForSeconds(30f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
