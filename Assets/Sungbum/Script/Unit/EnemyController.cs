@@ -18,7 +18,7 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     private void OnDestroy()
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
-        uI_Manager.AddScore(150)//+값 넣어주면 될듯;
+        uI_Manager.AddScore(150 + PlusScore)/*+값 넣어주면 될듯*/;
     }
 
     // Start is called before the first frame update

@@ -12,6 +12,8 @@ public class Unit : MonoBehaviour
     public float CurExp { get; set; }
     public float MaxExp { get; set; }
 
+    public int PlusScore = 0;
+
 
     // Start is called before the first frame update
     void Start()
