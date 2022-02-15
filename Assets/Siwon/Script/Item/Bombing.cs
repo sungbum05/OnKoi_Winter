@@ -5,31 +5,40 @@ using UnityEngine;
 public class Bombing : Item
 {
     public float Radius;
-    Vector3 Mpos;
-
+    protected Vector3 Mpos;
+    Vector3 Strike;
+    public bool BoomCheck;
     public GameObject mBoom;
-    //protected override void OnTriggerEnter(Collider other)
-    //{
-    //    base.OnTriggerEnter(other);
-    //    Missile();
-    //}
+    Transform transform;
+    
+   
+    void Start()
+    {
+        transform = GetComponent<Transform>();
+        Vector3 StrikePos = transform.position;
+        Missile();
+    }
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "player")
+        {
+            Missile();
+        }
+    }
 
     public void Missile()
     {
+        
         for (int i = 0; i < 8; i++)
         {
-            Vector3 MissilePos = this.transform.position + Random.insideUnitSphere * Radius;
-            Mpos = new Vector3(MissilePos.x, 1f, MissilePos.z);
-            Instantiate(mBoom, Mpos, Quaternion.Euler(0, 0, 0));
-            Destroy(gameObject);
+            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 10f, this.transform.position.z);
+            Instantiate(mBoom, Strike, Quaternion.Euler(0, 0, 0));
             StartCoroutine(MissileDel());
         }
+
     }
     
-    void Start()
-    {
-        Missile();
-    }
+    
     IEnumerator MissileDel()
     {
         yield return new WaitForSeconds(0.15f);

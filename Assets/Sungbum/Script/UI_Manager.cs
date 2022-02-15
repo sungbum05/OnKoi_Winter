@@ -98,7 +98,7 @@ public class UI_Manager : MonoBehaviour
 
     void SetGunKinds()
     {
-        for (int i = 0; i < KindGun.transform.GetChildCount(); i++)
+        for (int i = 0; i < KindGun.transform.childCount; i++)
         {
             KindsGun.Add(KindGun.transform.GetChild(i).gameObject);
         }
@@ -120,7 +120,7 @@ public class UI_Manager : MonoBehaviour
 
                 if (GunObj.name == GunObj.GetComponent<SetGun>().BasicGun.name)
                 {
-                    Ammo.text = $"¡Ä";
+                    Ammo.text = $"ï¿½ï¿½";
                 }
 
                 else

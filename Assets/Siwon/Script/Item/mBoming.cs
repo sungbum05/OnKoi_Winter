@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mBoming : MonoBehaviour
+public class mBoming : Bombing
 {
     Unit unit;
-    Collider thisCollider;
+    Bombing bombing;
+    Vector3 MissilePos;
+
     void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Enemy")
@@ -15,11 +17,11 @@ public class mBoming : MonoBehaviour
     }
     private void Start()
     {
-        
-        thisCollider = GetComponent<Collider>();
-        gameObject.SetActive(true);
-        OnTriggerEnter(thisCollider);
-        gameObject.SetActive(false);
+        MissilePos = bombing.transform.position + Random.insideUnitSphere * Radius;
+        Mpos = new Vector3(MissilePos.x, 1f, MissilePos.z);
     }
-   
+    private void Update()
+    {
+        this.transform.position = Vector3.MoveTowards(this.transform.position, Mpos, 10f * Time.deltaTime);
+    }
 }

@@ -54,7 +54,7 @@ public abstract class Item : MonoBehaviour
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "player")
         {
             
         }

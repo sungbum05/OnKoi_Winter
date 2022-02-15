@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy2Controller : Unit
 {
+    Bombing bombing;
     [SerializeField]
     GameObject Player;
 
@@ -26,6 +27,7 @@ public class Enemy2Controller : Unit
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
         uI_Manager.AddScore(150 + PlusScore)/*+값 넣어주면 될듯*/;
         itemSpawner.ResultSelect();
+        bombing.Missile();
     }
 
     // Start is called before the first frame update
