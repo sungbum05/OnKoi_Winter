@@ -13,6 +13,7 @@ public class Enemy2Controller : Unit
 
     Vector3 TargetPosition;
     ItemSpawner itemSpawner;
+
     private float RateAttack;
     private float RateTime = 0.8f;
     private float RateCurTime = 0;
