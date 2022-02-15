@@ -67,7 +67,7 @@ public class LaserCon : Unit
             if(Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance, LayerMask))
             {
                 Debug.Log("hit");
-                hit.transform.gameObject.GetComponent<PlayerContorller>().OnHit(10);
+                hit.transform.gameObject.GetComponent<PlayerContorller>().OnHit(30);
             }
         }
 

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5180587954587869165}
   - component: {fileID: 4531366843756535784}
   m_Layer: 0
-  m_Name: Enemy_4_
+  m_Name: Enemy_4_Laser
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,10 +128,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f89790f08088fb49aab8f4960da27f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlusScore: 0
   Player: {fileID: 0}
   uI_Manager: {fileID: 0}
   Bullet: {fileID: 4399571416262677520, guid: 737ef996d2e7847459bd4aa3a7f07ec6, type: 3}
-  Range: 20
+  Range: 15
 --- !u!120 &5180587954587869165
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +152,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,7 +175,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 0.5}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -195,8 +196,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 0.990566, g: 0.5633249, b: 0, a: 0.7254902}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -212,7 +213,7 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 61295
       atime2: 0
       atime3: 0
       atime4: 0
@@ -242,12 +243,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfaa4ec0c2e035241bb896a089681207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlusScore: 0
   Player: {fileID: 0}
-  startp: {x: 0, y: 0, z: 0}
+  MaxDistance: 15
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  startp: {x: 0, y: 1.35, z: 0}
   endp: {x: 0, y: 0, z: 0}
-  Range: 0
-  speed: 0
-  islerp: 0
+  Range: 15
+  speed: 5
+  islerp: 1
   rot: 0
 --- !u!1 &644914604123740142
 GameObject:

@@ -120,7 +120,7 @@ public class UI_Manager : MonoBehaviour
 
                 if (GunObj.name == GunObj.GetComponent<SetGun>().BasicGun.name)
                 {
-                    Ammo.text = $"��";
+                    Ammo.text = $"Infinity";
                 }
 
                 else

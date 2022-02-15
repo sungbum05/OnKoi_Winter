@@ -65,9 +65,14 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if (this.gameObject.tag == "Enemy" && other.gameObject.tag == "Player")
         {
-            switch(GetEnemyType(other.gameObject))
+            other.gameObject.GetComponent<PlayerContorller>().OnHit(50);
+        }
+
+        else if (this.gameObject.tag == "Player" && other.gameObject.tag == "Enemy")
+        {
+            switch (GetEnemyType(other.gameObject))
             {
                 case 1:
                     other.gameObject.GetComponent<EnemyController>().OnHit(99999);
@@ -78,7 +83,7 @@ public class Explosion : MonoBehaviour
                     break;
 
                 case 3:
-                    //other.gameObject.GetComponent<Enemy3Controller>().OnHit(99999);
+                    other.gameObject.GetComponent<Enemy3Controller>().OnHit(99999);
                     break;
 
                 case 4:

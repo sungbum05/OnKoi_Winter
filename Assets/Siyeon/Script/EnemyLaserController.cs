@@ -84,11 +84,11 @@ public class EnemyLaserController : Unit
     {
         //만약 원거리 적이 플레이어가 근처에 왔을때 때리지 않는다면 삭제
 
-        if (other.gameObject.CompareTag("Player") && RateAttack <= 0)
-        {
-            RateAttack = RateTime;
-            other.gameObject.GetComponent<PlayerContorller>().OnHit(10); // 플레이어 공격 
-        }
+        //if (other.gameObject.CompareTag("Player") && RateAttack <= 0)
+        //{
+        //    RateAttack = RateTime;
+        //    other.gameObject.GetComponent<PlayerContorller>().OnHit(30); // 플레이어 공격 
+        //}
     }
 
    

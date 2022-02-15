@@ -78,9 +78,9 @@ public class SubmachineGun : SetGun
                             hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
                             break;
 
-                            //case 3:
-                            //    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
-                            //    break;
+                        case 3:
+                            hitInfo.transform.gameObject.GetComponent<Enemy3Controller>().OnHit(Damege);
+                            break;
                     }
 
                     GameObject Particle = Instantiate(GunParticle);

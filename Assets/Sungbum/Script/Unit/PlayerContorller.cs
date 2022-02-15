@@ -13,6 +13,9 @@ public class PlayerContorller : Unit
     public float MaxShield { get; set; }
     float ChargeShield = 0.2f;
 
+    [SerializeField]
+    public float NucBackRange = 1.0f;
+
     // Start is called before the first frame update
     private void OnDestroy()
     {
@@ -27,7 +30,6 @@ public class PlayerContorller : Unit
     // Update is called once per frame
     void Update()
     {
-        PlayerMove();
         RotateToMouseDir();
         RefillShield();
 
@@ -35,6 +37,11 @@ public class PlayerContorller : Unit
         {
             CheatKey();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        PlayerMove();
     }
 
     void SetState()
@@ -62,7 +69,9 @@ public class PlayerContorller : Unit
         float XMove = Input.GetAxis("Horizontal");
         float ZMove = Input.GetAxis("Vertical");
 
-        this.gameObject.transform.localPosition += new Vector3(XMove * Time.deltaTime * MoveSpeed, 0.0f, ZMove * Time.deltaTime * MoveSpeed);
+        //this.gameObject.transform.localPosition += new Vector3(XMove * Time.deltaTime * MoveSpeed, 0.0f, ZMove * Time.deltaTime * MoveSpeed);
+
+        this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(XMove, 0.0f, ZMove) * MoveSpeed;
 
         //this.gameObject.transform.Translate(XMove * Time.deltaTime * MoveSpeed, 0, 
         //    ZMove * Time.deltaTime * MoveSpeed);
@@ -85,19 +94,25 @@ public class PlayerContorller : Unit
         }
     }
 
-    //private void OnTriggerStay(Collider other)
+    //private void OnCollisionEnter(Collision other)
     //{
-    //    if(other.gameObject.CompareTag("Ride"))
+    //    if (other.gameObject.tag == "Enemy")
     //    {
-    //        Ride();
+    //        Vector3 BackPosition = this.gameObject.transform.position - other.gameObject.transform.position;
+    //        Debug.Log(BackPosition);
+
+    //        this.gameObject.transform.localPosition += new Vector3(BackPosition.x * Time.deltaTime * MoveSpeed, 0.0f, BackPosition.z * Time.deltaTime * MoveSpeed);
     //    }
     //}
 
-    //void Ride()
+    //private void OnCollisionStay(Collision other)
     //{
-    //    if(Input.GetKeyDown(KeyCode.F))
+    //    if(other.gameObject.tag == "Enemy")
     //    {
+    //        Vector3 BackPosition = this.gameObject.transform.position - other.gameObject.transform.position;
+    //        Debug.Log(BackPosition);
 
+    //        this.gameObject.GetComponent<Rigidbody>().velocity += BackPosition;
     //    }
     //}
 

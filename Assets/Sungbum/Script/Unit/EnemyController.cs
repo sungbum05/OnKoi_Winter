@@ -35,7 +35,11 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     void Update()
     {
         RateAttackDel();
-        EnemyMove();
+
+        if (Move == true)
+        {
+            EnemyMove();
+        }
     }
 
     void EnemySet() // 적 기본 셋팅 awake나 start에서 실행
@@ -52,8 +56,7 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
 
     void EnemyMove()
     {
-        this.transform.Find("Enemy_Sprite").Rotate(270 * Time.deltaTime, 0.0f, 100 * Time.deltaTime);
-        transform.rotation = Quaternion.LookRotation(TargetPosition);
+        transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(TargetPosition), 2.5f * Time.deltaTime);  
 
         Target();
         transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
