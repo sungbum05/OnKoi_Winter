@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaserCon : MonoBehaviour
+public class LaserCon : Unit
 {
     [SerializeField]
     GameObject Player;
 
     private LineRenderer lr;
+
+    RaycastHit hit;
+    public float MaxDistance = 15f;
+    public LayerMask LayerMask;
 
     public Vector3 startp;
     public Vector3 endp;
@@ -60,6 +64,11 @@ public class LaserCon : MonoBehaviour
         {
             RateCurTime = 0;
             Laser();
+            if(Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance, LayerMask))
+            {
+                Debug.Log("hit");
+                hit.transform.gameObject.GetComponent<PlayerContorller>().OnHit(10);
+            }
         }
 
     }
