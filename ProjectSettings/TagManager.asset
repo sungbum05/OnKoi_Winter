@@ -8,6 +8,7 @@ TagManager:
   - Ride
   - Tank
   - Floor
+  - ItemGun
   layers:
   - Default
   - TransparentFX

@@ -20,9 +20,9 @@ public class ItemSpawner : MonoBehaviour
     {
         int weight = 0;
         int selectNum = 0;
-        selectNum = Mathf.RoundToInt(total * Random.Range(0.0f, 1.0f));
+        selectNum = Mathf.RoundToInt(total * Random.Range(0f, 100f));
 
-        for (int i = 0; i < 1; i++)
+        for (int i = 0; i < 12; i++)
         {
             weight += ItemMenu[i].weight;
             if (selectNum <= weight)

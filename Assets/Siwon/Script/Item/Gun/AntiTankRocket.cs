@@ -18,7 +18,7 @@ public class AntiTankRocket : Item
         {
             text.enabled = true;
         }
-        if(other.tag == "Player" && Input.GetKeyDown(KeyCode.F)) 
+        if(other.tag == "Player" && Input.GetKeyDown(KeyCode.F))
         {
             GameObject.Find("AT_Rocket_5").SetActive(true);
         }

@@ -16,6 +16,7 @@ public class Bombing : Item
     {
         transform = GetComponent<Transform>();
         Vector3 StrikePos = transform.position;
+        Missile();
         
     }
     protected override void OnTriggerEnter(Collider other)
@@ -36,7 +37,7 @@ public class Bombing : Item
     {
         for (int i = 0; i < 8; i++)
         {
-            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 30f, this.transform.position.z);
+            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 50f, this.transform.position.z);
             Instantiate(mBoom, Strike, Quaternion.Euler(0, 0, 0));
             yield return new WaitForSeconds(0.15f);
         }
