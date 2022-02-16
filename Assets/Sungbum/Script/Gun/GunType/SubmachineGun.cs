@@ -68,20 +68,7 @@ public class SubmachineGun : SetGun
                 {
                     Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
 
-                    switch (GetEnemyType(hitInfo))
-                    {
-                        case 1:
-                            hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
-                            break;
-
-                        case 2:
-                            hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
-                            break;
-
-                        case 3:
-                            hitInfo.transform.gameObject.GetComponent<Enemy3Controller>().OnHit(Damege);
-                            break;
-                    }
+                    hitInfo.transform.gameObject.GetComponent<Unit>().OnHit(Damege);
 
                     GameObject Particle = Instantiate(GunParticle);
                     Particle.transform.position = hitInfo.transform.position;

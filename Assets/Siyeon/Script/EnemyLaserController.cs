@@ -72,25 +72,10 @@ public class EnemyLaserController : Unit
 
     void EnemyMove()
     {
-        this.transform.Find("Enemy_Sprite").Rotate(270 * Time.deltaTime, 0.0f, 100 * Time.deltaTime);
         transform.rotation = Quaternion.LookRotation(TargetPosition).normalized;
 
         Target();
         transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
         this.GetComponent<Rigidbody>().velocity = TargetPosition * Time.deltaTime * MoveSpeed;
     }
-
-    private void OnCollisionStay(Collision other)
-    {
-        //만약 원거리 적이 플레이어가 근처에 왔을때 때리지 않는다면 삭제
-
-        //if (other.gameObject.CompareTag("Player") && RateAttack <= 0)
-        //{
-        //    RateAttack = RateTime;
-        //    other.gameObject.GetComponent<PlayerContorller>().OnHit(30); // 플레이어 공격 
-        //}
-    }
-
-   
-   
 }
