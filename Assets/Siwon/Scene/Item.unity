@@ -632,42 +632,42 @@ MonoBehaviour:
     itemType: 1
     weight: 3
   - itemName: "\uB2E8\uCD1D"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 97bd10c33d1b45946855f2c213734067, type: 3}
     itemGrade: 2
     itemType: 1
     weight: 3
   - itemName: "\uC18C\uCD1D"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 69c2042a21802b3488b885ea2491a606, type: 3}
     itemGrade: 2
     itemType: 1
     weight: 3
   - itemName: "\uD3ED\uACA9"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 3bf8146c358a46347bb8fa4d35d86a95, type: 3}
     itemGrade: 2
     itemType: 2
     weight: 3
   - itemName: "\uD130\uB81B"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 8c039c62a68e4f541adfebcbbe90cfa4, type: 3}
     itemGrade: 2
     itemType: 2
     weight: 3
   - itemName: "\uD575"
-    itemObject: {fileID: 6237582144165396076, guid: 950ca1f0ea98e9540a513ddadf25e224, type: 3}
+    itemObject: {fileID: 6237582144165396076, guid: d90754128581258429cae2d2eea3f9fb, type: 3}
     itemGrade: 0
     itemType: 2
     weight: 1
   - itemName: "\uC911\uAE30\uAD00\uCD1D"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 7c0be1a8a7321af4287474705a939a07, type: 3}
     itemGrade: 1
     itemType: 1
     weight: 2
   - itemName: "\uB300\uC804\uCC28 \uB85C\uCF13"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 1d42f37bbc67f7b4790a88352e5dedf0, type: 3}
     itemGrade: 1
     itemType: 1
     weight: 2
   - itemName: "\uC2AC\uB85C\uC6B0"
-    itemObject: {fileID: 0}
+    itemObject: {fileID: 6237582144165396076, guid: 461805acfd1ef75469487b24f1dd25b9, type: 3}
     itemGrade: 1
     itemType: 2
     weight: 2

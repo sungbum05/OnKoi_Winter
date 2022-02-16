@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
 public class ItemSpawner : MonoBehaviour
 {
-    
+
     public List<ItemList> ItemMenu = new List<ItemList>();
     public int total = 0;
     public List<ItemList> result = new List<ItemList>();
-
-    public void ResultSelect()
+    
+    public void ResultSelect(Vector3 Pos)
     {
         result.Add(RandomItem());
-        StartCoroutine(SpawnIt());
+        Instantiate(result[0].itemObject,Pos,Quaternion.identity);
+        result.Clear();
     }
     public ItemList RandomItem()
     {
         int weight = 0;
         int selectNum = 0;
-        selectNum = Mathf.RoundToInt(total * Random.Range(0f, 100f));
+        selectNum = Mathf.RoundToInt(total * Random.Range(0.0f, 1.0f));
 
         for (int i = 0; i < 12; i++)
         {
+            Debug.Log(selectNum);
             weight += ItemMenu[i].weight;
             if (selectNum <= weight)
             {
@@ -39,11 +40,12 @@ public class ItemSpawner : MonoBehaviour
         {
             total += ItemMenu[i].weight;
         }
-        StartCoroutine(SpawnIt());
     }
-    IEnumerator SpawnIt()
+    private void Update()
     {
-        yield return new WaitForSeconds(1f);
-        RandomItem();
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            ResultSelect(this.transform.position);
+        }
     }
 }

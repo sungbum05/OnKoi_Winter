@@ -15,9 +15,7 @@ public class Bombing : Item
     void Start()
     {
         transform = GetComponent<Transform>();
-        Vector3 StrikePos = transform.position;
-        Missile();
-        
+        Vector3 StrikePos = transform.position;        
     }
     protected override void OnTriggerEnter(Collider other)
     {

@@ -27,7 +27,7 @@ public class Enemy2Controller : Unit
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
         uI_Manager.AddScore(150 + PlusScore)/*+값 넣어주면 될듯*/;
-        itemSpawner.ResultSelect();
+        itemSpawner.ResultSelect(this.transform.position);
         bombing.Missile();
     }
 

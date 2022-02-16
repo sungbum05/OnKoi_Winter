@@ -39,7 +39,7 @@ public class PlayerContorller : Unit
 
             CheatKey();
 
-            ItemSpawner.GetComponent<ItemSpawner>().ResultSelect();
+            ItemSpawner.GetComponent<ItemSpawner>().ResultSelect(this.transform.position);
         }
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
 public abstract class Item : MonoBehaviour
 {
     public bool HitPlayer = false;
@@ -26,31 +25,10 @@ public abstract class Item : MonoBehaviour
 
     [SerializeField]
     protected Text Itemname;
-    
-    
-   
-   
-    //public void GetTranform(Vector3 pos)
-    //{
-    //    endPos = pos;
-    //    StartCoroutine(Temp(1f));
-    //}
-
-    //IEnumerator Temp(float speed)
-    //{
-    //    while (Vector3.Distance(transform.position, endPos) < 0.1f)
-    //    {
-
-    //        yield return null;
-    //    }
-    //    transform.position = endPos;
-
-    //}
 
     protected virtual void Start()
     {
-        Itemname.text = GetComponent<Item>().name;
-
+        Itemname.text = this.gameObject.name;
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
@@ -62,12 +40,10 @@ public abstract class Item : MonoBehaviour
 
     protected virtual void Update()
     {
-
         if (HitPlayer == true)
         {
             Destroy(this.gameObject);
             Itemuse = false;
         }
     }
-
 }
