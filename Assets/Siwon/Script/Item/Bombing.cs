@@ -16,11 +16,11 @@ public class Bombing : Item
     {
         transform = GetComponent<Transform>();
         Vector3 StrikePos = transform.position;
-        Missile();
+        
     }
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
+        if (other.tag == "Player")
         {
             Missile();
         }

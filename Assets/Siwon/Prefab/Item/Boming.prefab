@@ -113,4 +113,5 @@ MonoBehaviour:
   ItemPosition: {x: 0, y: 0, z: 0}
   Itemname: {fileID: 0}
   Radius: 20
-  mBoom: {fileID: 1133684154916223770, guid: 5d3c7cc7986f1e14eae25b6fb269b68d, type: 3}
+  BoomCheck: 0
+  mBoom: {fileID: 5517553662279335328, guid: 0564a979b3527ce4c90f4c72446bc745, type: 3}

@@ -16,7 +16,7 @@ public class mBoming : Bombing
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ("Floor"))
+        if (collision.gameObject.tag == "Floor")
         {
             Debug.Log("¾ß¹ß");
             Instantiate(Explosion, this.transform.position, Quaternion.identity);
