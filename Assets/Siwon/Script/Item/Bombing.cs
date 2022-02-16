@@ -28,7 +28,7 @@ public class Bombing : Item
 
     public void Missile()
     {
-            StartCoroutine(MissileDel());
+        StartCoroutine(MissileDel());
     }
     
     
@@ -36,7 +36,7 @@ public class Bombing : Item
     {
         for (int i = 0; i < 8; i++)
         {
-            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 10f, this.transform.position.z);
+            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 30f, this.transform.position.z);
             Instantiate(mBoom, Strike, Quaternion.Euler(0, 0, 0));
             yield return new WaitForSeconds(0.15f);
         }

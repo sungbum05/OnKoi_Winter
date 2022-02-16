@@ -56,17 +56,18 @@ public abstract class Item : MonoBehaviour
     {
         if (other.tag == "player")
         {
-            
+            Itemuse = true;
         }
     }
 
     protected virtual void Update()
     {
 
-        if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
+        if (HitPlayer == true)
         {
             Destroy(this.gameObject);
-            Itemuse = true;
+            Itemuse = false;
         }
     }
+
 }

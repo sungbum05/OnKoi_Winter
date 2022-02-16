@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleScore : MonoBehaviour
+public class DoubleScore :  MonoBehaviour
 {
     public bool isDoubleScore = false;
     void OnTriggerEnter(Collider other)

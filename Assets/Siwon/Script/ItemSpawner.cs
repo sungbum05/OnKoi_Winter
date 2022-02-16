@@ -14,6 +14,7 @@ public class ItemSpawner : MonoBehaviour
     public void ResultSelect()
     {
         result.Add(RandomItem());
+        StartCoroutine(SpawnIt());
     }
     public ItemList RandomItem()
     {
@@ -38,7 +39,11 @@ public class ItemSpawner : MonoBehaviour
         {
             total += ItemMenu[i].weight;
         }
+        StartCoroutine(SpawnIt());
     }
-
-
+    IEnumerator SpawnIt()
+    {
+        yield return new WaitForSeconds(1f);
+        RandomItem();
+    }
 }
