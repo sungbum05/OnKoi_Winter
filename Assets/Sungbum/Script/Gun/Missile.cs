@@ -21,14 +21,14 @@ public class Missile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy")
         {
             GameObject ExplosionClone = Instantiate(ExplosionEffect);
 
             ExplosionEffect.GetComponent<Explosion>().ExplosionScale = 15;
 
             Debug.Log("Explo");
-            ExplosionClone.transform.position = new Vector3(other.gameObject.transform.position.x, 
+            ExplosionClone.transform.position = new Vector3(other.gameObject.transform.position.x,
                 0.5f, other.gameObject.transform.position.z);
 
             Destroy(this.gameObject);
