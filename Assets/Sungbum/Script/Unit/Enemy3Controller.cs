@@ -98,6 +98,7 @@ public class Enemy3Controller : Unit
         Player = null;
         MoveSpeed = 0;
         Hp = 99999;
+        this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 
         Smoke.gameObject.SetActive(true);
         yield return new WaitForSeconds(2.5f);

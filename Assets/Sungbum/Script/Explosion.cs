@@ -72,24 +72,7 @@ public class Explosion : MonoBehaviour
 
         else if (this.gameObject.tag == "Player" && other.gameObject.tag == "Enemy")
         {
-            switch (GetEnemyType(other.gameObject))
-            {
-                case 1:
-                    other.gameObject.GetComponent<EnemyController>().OnHit(99999);
-                    break;
-
-                case 2:
-                    other.gameObject.GetComponent<Enemy2Controller>().OnHit(99999);
-                    break;
-
-                case 3:
-                    other.gameObject.GetComponent<Enemy3Controller>().OnHit(99999);
-                    break;
-
-                case 4:
-                    other.gameObject.GetComponent<EnemyLaserController>().OnHit(99999);
-                    break;
-            }
+            other.transform.gameObject.GetComponent<Unit>().OnHit(9999);
         }
     }
 }
