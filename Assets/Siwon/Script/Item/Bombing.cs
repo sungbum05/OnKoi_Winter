@@ -28,19 +28,18 @@ public class Bombing : Item
 
     public void Missile()
     {
-        
-        for (int i = 0; i < 8; i++)
-        {
-            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 10f, this.transform.position.z);
-            Instantiate(mBoom, Strike, Quaternion.Euler(0, 0, 0));
             StartCoroutine(MissileDel());
-        }
-
     }
     
     
     IEnumerator MissileDel()
     {
-        yield return new WaitForSeconds(0.15f);
+        for (int i = 0; i < 8; i++)
+        {
+            Strike = new Vector3(this.transform.position.x, this.transform.position.y + 10f, this.transform.position.z);
+            Instantiate(mBoom, Strike, Quaternion.Euler(0, 0, 0));
+            yield return new WaitForSeconds(0.15f);
+        }
+        yield return null;
     }
 }

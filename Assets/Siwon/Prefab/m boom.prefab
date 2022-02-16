@@ -108,3 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1144e3166abe14b4d941b5416751ca02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPlayer: 0
+  Itemuse: 0
+  ItemPosition: {x: 0, y: 0, z: 0}
+  Itemname: {fileID: 0}
+  Radius: 15
+  BoomCheck: 0
+  mBoom: {fileID: 1133684154916223770}
