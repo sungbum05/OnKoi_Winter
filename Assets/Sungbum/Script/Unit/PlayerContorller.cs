@@ -9,12 +9,12 @@ public class PlayerContorller : Unit
     [SerializeField]
     private GameObject StatPan;
 
+    [SerializeField]
+    private ItemSpawner ItemSpawner;
+
     float RefillTime = 2.0f;
     public float MaxShield { get; set; }
     float ChargeShield = 0.2f;
-
-    [SerializeField]
-    public float NucBackRange = 1.0f;
 
     // Start is called before the first frame update
     private void OnDestroy()
@@ -35,7 +35,11 @@ public class PlayerContorller : Unit
 
         if(Input.GetKeyDown(KeyCode.L))
         {
+            Debug.Log("asd");
+
             CheatKey();
+
+            ItemSpawner.GetComponent<ItemSpawner>().ResultSelect();
         }
     }
 
