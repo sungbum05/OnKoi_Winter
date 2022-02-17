@@ -119,11 +119,11 @@ public class Enemy3Controller : Unit
 
             if(this.gameObject.transform.position.y <= 0.6f)
             {
-                this.gameObject.transform.Translate(0, 2f * Time.deltaTime, 0);
+                this.gameObject.transform.localPosition += new Vector3(0, 2f * Time.deltaTime, 0);
 
                 if (this.gameObject.transform.position.y >= -1.0f && this.gameObject.transform.rotation.x <= 0)
                 {
-                    this.gameObject.transform.Rotate(37 * Time.deltaTime, 0, 0);
+                    this.gameObject.transform.Rotate(55 * Time.deltaTime, 0, 0);
                 }
             }
 
