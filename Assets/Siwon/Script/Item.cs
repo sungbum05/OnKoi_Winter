@@ -23,35 +23,28 @@ public abstract class Item : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    protected Text Itemname;
-    protected Text F;
+   
 
     protected virtual void Start()
     {
-        F = GetComponent<Text>();
-        Itemname.text = this.gameObject.name;
+      
+        
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             Itemuse = true;
+            
         }
     }
 
-    protected virtual void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            F.enabled = true;
-        }
-    }
+    
     protected virtual void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            F.enabled = false;
+            
         }
     }
     protected virtual void Update()
