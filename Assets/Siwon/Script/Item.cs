@@ -11,7 +11,7 @@ public abstract class Item : MonoBehaviour
     private Camera cam;
     public Vector3 ItemPosition;
     
-    public Camera Cam
+    protected virtual Camera Cam
     {
         get
         {
@@ -25,9 +25,11 @@ public abstract class Item : MonoBehaviour
 
     [SerializeField]
     protected Text Itemname;
+    protected Text F;
 
     protected virtual void Start()
     {
+        F = GetComponent<Text>();
         Itemname.text = this.gameObject.name;
     }
     protected virtual void OnTriggerEnter(Collider other)
@@ -38,6 +40,20 @@ public abstract class Item : MonoBehaviour
         }
     }
 
+    protected virtual void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            F.enabled = true;
+        }
+    }
+    protected virtual void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            F.enabled = false;
+        }
+    }
     protected virtual void Update()
     {
         if (HitPlayer == true)

@@ -9,12 +9,14 @@ public class ItemSpawner : MonoBehaviour
     public List<ItemList> ItemMenu = new List<ItemList>();
     public int total = 0;
     public List<ItemList> result = new List<ItemList>();
-    
-    public void ResultSelect(Vector3 Pos)
+    public void ResultSelect()
     {
         result.Add(RandomItem());
-        Instantiate(result[0].itemObject,Pos,Quaternion.identity);
-        result.Clear();
+        if (result[0].itemObject != null)
+        {
+            Instantiate(result[0].itemObject);
+            result.Clear();
+        }
     }
     public ItemList RandomItem()
     {
@@ -45,7 +47,7 @@ public class ItemSpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            ResultSelect(this.transform.position);
+            ResultSelect();
         }
     }
 }
