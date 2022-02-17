@@ -7,6 +7,9 @@ public class LaserCon : Unit
     [SerializeField]
     GameObject Player;
 
+    [SerializeField]
+    GameObject ShootPos;
+
     private LineRenderer lr;
 
     RaycastHit hit;
@@ -32,6 +35,8 @@ public class LaserCon : Unit
     // Start is called before the first frame update
     void Start()
     {
+        startp = new Vector3(ShootPos.transform.localPosition.x, 9.5f ,ShootPos.transform.localPosition.z);
+
         Player = GameObject.Find("Player");
         lr.SetPosition(0, startp);
         rot = true;

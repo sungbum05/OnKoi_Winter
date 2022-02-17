@@ -66,11 +66,11 @@ public class Pistol : SetGun
 
             Destroy(Bullet, Random.Range(0.15f, 0.20f));//ÃÑ¾Ë »èÁ¦
 
-            if (Physics.Raycast(this.transform.position, this.transform.parent.transform.forward, out hitInfo, 30.0f))
+            if (Physics.Raycast(this.ShootPosition.position, this.transform.parent.transform.forward, out hitInfo, 30.0f))
             {
                 if (hitInfo.transform.gameObject.tag == "Enemy")
                 {
-                    Debug.DrawRay(this.transform.position, (this.ShootPosition.forward) * 30.0f, Color.red, 0.5f);
+                    Debug.DrawRay(this.ShootPosition.position, (this.ShootPosition.forward) * 30.0f, Color.red, 0.5f);
 
                     hitInfo.transform.gameObject.GetComponent<Unit>().OnHit(Damege);
                   
