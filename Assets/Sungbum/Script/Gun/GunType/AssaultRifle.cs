@@ -57,16 +57,14 @@ public class AssaultRifle : SetGun
             Vector3 RandomRay = new Vector3(Random.RandomRange(-BulletSpread, BulletSpread + 0.1f), 0, Random.RandomRange(-BulletSpread, BulletSpread + 0.1f));
 
             Bullet.GetComponent<Rigidbody>().AddForce((this.ShootPosition.forward + RandomRay) * BulletSpeed, ForceMode.Impulse);
-            Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
-
             Destroy(Bullet, Random.Range(0.15f, 0.24f));//ÃÑ¾Ë »èÁ¦
 
-            if (Physics.Raycast(this.transform.position, this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
+            Debug.DrawRay(this.ShootPosition.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
+
+            if (Physics.Raycast(this.ShootPosition.position, this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
             {
                 if (hitInfo.transform.gameObject.tag == "Enemy")
                 {
-                    Debug.DrawRay(this.transform.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
-
                     hitInfo.transform.gameObject.GetComponent<Unit>().OnHit(Damege);
 
                     GameObject Particle = Instantiate(GunParticle);
