@@ -27,6 +27,7 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     {
         Player = GameObject.Find("Player");
         uI_Manager = GameObject.Find("UiManager").GetComponent<UI_Manager>();
+        SetItemSpawner();
         EnemySet();
     }
 

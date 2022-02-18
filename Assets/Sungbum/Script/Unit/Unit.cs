@@ -16,6 +16,8 @@ public class Unit : MonoBehaviour
 
     public bool Move = false;
 
+    [SerializeField]
+    protected ItemSpawner ItemSpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,11 @@ public class Unit : MonoBehaviour
     void Update()
     {
         
+    }
+
+    protected void SetItemSpawner()
+    {
+        ItemSpawner = GameObject.Find("ItemSpawner").GetComponent<ItemSpawner>();
     }
 
     public virtual void OnHit(float Damege)
@@ -44,6 +51,7 @@ public class Unit : MonoBehaviour
         if(Hp <= 0)
         {
             Destroy(this.gameObject);
+            ItemSpawner.ResultSelect(this.gameObject.transform);
         }
     }
 }
