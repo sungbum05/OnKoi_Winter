@@ -23,6 +23,8 @@ public class Pistol : SetGun
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Damege);
+
         FireGun();
 
         if (IsMaxCap == true || BeforeFireTime <= 0)

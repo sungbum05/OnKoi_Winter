@@ -117,6 +117,10 @@ public class SetGun : MonoBehaviour
         CurAmmo = Ammo;
 
         BasicGun.gameObject.SetActive(true);
+        BasicGun.GetComponent<SetGun>().CurHeatCapacity = 0;
+
+        this.CurAmmo = Ammo;
+        this.CurHeatCapacity = 0;
         this.gameObject.SetActive(false);
     }
 

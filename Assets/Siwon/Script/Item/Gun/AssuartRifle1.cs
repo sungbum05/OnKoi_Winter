@@ -27,6 +27,7 @@ public class AssuartRifle1 : Item
     {
         if (other.tag == "Player")
         {
+            HitPlayer = false;
             F.gameObject.SetActive(false);
         }
     }
@@ -34,6 +35,13 @@ public class AssuartRifle1 : Item
     {
         if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
         {
+            for (int i = 0; i < KindGun.transform.childCount; i++)
+            {
+                KindGun.transform.GetChild(i).gameObject.SetActive(false);
+                KindGun.transform.GetChild(i).GetComponent<SetGun>().CurHeatCapacity = 0;
+                KindGun.transform.GetChild(i).GetComponent<SetGun>().CurAmmo = KindGun.transform.GetChild(i).GetComponent<SetGun>().Ammo;
+            }
+
             KindGun.transform.FindChild("assaultrifle_3").gameObject.SetActive(true);
             Destroy(this.gameObject);
 

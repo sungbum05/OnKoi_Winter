@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class DoubleDamage : MonoBehaviour
 {
-    SetGun setGun;
-    
+    public GameObject KindGun;
+
+    private void Awake()
+    {
+        KindGun = GameObject.Find("Player").transform.FindChild("KindGun").gameObject;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Destroy(this.gameObject);
-            //setGun.Damege *= 2;
+            for (int i = 0; i < KindGun.transform.childCount; i++)
+            {
+                this.gameObject.GetComponent<MeshFilter>().mesh = null;
+                this.gameObject.GetComponent<BoxCollider>().enabled = false;
+
+                this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+                KindGun.transform.GetChild(i).GetComponent<SetGun>().Damege *= 2;
+            }
+
             StartCoroutine(isDoubleDamageWait());
         }
-        setGun.Damege /= 2;
     }
     IEnumerator isDoubleDamageWait()
     {
         Debug.Log("DoubleDamage");
-        yield return new WaitForSeconds(30f);
-    }
-    private void Start()
-    {
-       
-    }
+        yield return new WaitForSeconds(10f);
 
+        for (int i = 0; i < KindGun.transform.childCount; i++)
+        {
+            KindGun.transform.GetChild(i).GetComponent<SetGun>().Damege /= 2;
+        }
 
+        Destroy(this.gameObject);
+    }
 }

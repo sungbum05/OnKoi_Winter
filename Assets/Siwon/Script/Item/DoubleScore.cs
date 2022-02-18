@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class DoubleScore :  MonoBehaviour
 {
-    public bool isDoubleScore = false;
+    public GameObject AddScore;
+
+    private void Awake()
+    {
+        AddScore = GameObject.Find("UiManager");
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            Destroy(this.gameObject);
-            isDoubleScore = true;
+            this.gameObject.GetComponent<MeshFilter>().mesh = null;
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
+
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+            AddScore.GetComponent<UI_Manager>().isDoubleScore = true;
             StartCoroutine(DoubleScoreWait());
         }
-        isDoubleScore = false;
     }
     IEnumerator DoubleScoreWait()
     {
         Debug.Log("DoubleScore");
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(10f);
+
+        AddScore.GetComponent<UI_Manager>().isDoubleScore = false;
+        Destroy(this.gameObject);
     }
 }

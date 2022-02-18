@@ -9,6 +9,13 @@ public class AntiTankRocket : Item
     private Text F;
     [SerializeField]
     GameObject KindGun;
+
+    private void Awake()
+    {
+        KindGun = GameObject.Find("Player").transform.FindChild("KindGun").gameObject;
+        Debug.Log("¡§¿Á«Â");
+    }
+
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -25,6 +32,7 @@ public class AntiTankRocket : Item
     {
         if (other.tag == "Player")
         {
+            HitPlayer = false;
             F.gameObject.SetActive(false);
         }
     }
@@ -32,6 +40,13 @@ public class AntiTankRocket : Item
     {
         if(HitPlayer == true && Input.GetKeyDown(KeyCode.F)) 
         {
+            for(int i =0; i < KindGun.transform.childCount; i++)
+            {
+                KindGun.transform.GetChild(i).gameObject.SetActive(false);
+                KindGun.transform.GetChild(i).GetComponent<SetGun>().CurHeatCapacity = 0;
+                KindGun.transform.GetChild(i).GetComponent<SetGun>().CurAmmo = KindGun.transform.GetChild(i).GetComponent<SetGun>().Ammo;
+            }
+
             KindGun.transform.FindChild("ATRocket_5").gameObject.SetActive(true);
             Destroy(this.gameObject);
         }
