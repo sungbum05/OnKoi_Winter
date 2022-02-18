@@ -7,11 +7,6 @@ public class AntiTankRocket : Item
 {
     [SerializeField]
     private Text F;
-    void Start()
-    {
-
-        
-    }
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -20,8 +15,7 @@ public class AntiTankRocket : Item
         }
         if(other.tag == "Player" && Input.GetKeyDown(KeyCode.F))
         {
-            GameObject.Find("AT_Rocket_5").SetActive(true);
-            base.Update();
+           
         }
     }
     protected override void OnTriggerExit(Collider other)
@@ -29,6 +23,15 @@ public class AntiTankRocket : Item
         if (other.tag == "Player")
         {
             F.gameObject.SetActive(false);
+        }
+    }
+    protected override void Update()
+    {
+        if(HitPlayer == true && Input.GetKeyDown(KeyCode.F)) 
+        {
+            Debug.Log("¾¾¹ß·Ã¾Æ");
+            gameObject.transform.FindChild("AT_Rocket_5").gameObject.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 }

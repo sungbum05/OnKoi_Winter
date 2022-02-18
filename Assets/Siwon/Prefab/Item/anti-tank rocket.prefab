@@ -212,8 +212,7 @@ MonoBehaviour:
   HitPlayer: 0
   Itemuse: 0
   ItemPosition: {x: 0, y: 0, z: 0}
-  Itemname: {fileID: 0}
-  text: {fileID: 1534286059424344542}
+  F: {fileID: 5004998416055043958}
 --- !u!1 &9147568961063918106
 GameObject:
   m_ObjectHideFlags: 0

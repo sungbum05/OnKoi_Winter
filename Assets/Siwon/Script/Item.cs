@@ -10,7 +10,7 @@ public abstract class Item : MonoBehaviour
     public bool Itemuse = false;
     private Camera cam;
     public Vector3 ItemPosition;
-    
+
     protected virtual Camera Cam
     {
         get
@@ -23,36 +23,29 @@ public abstract class Item : MonoBehaviour
         }
     }
 
-   
+
 
     protected virtual void Start()
     {
-      
-        
+
+
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            HitPlayer = true;
             Itemuse = true;
-            
         }
     }
 
-    
+
     protected virtual void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
-        {
-            
-        }
+        HitPlayer = false;
     }
     protected virtual void Update()
     {
-        if (HitPlayer == true)
-        {
-            Destroy(this.gameObject);
-            Itemuse = false;
-        }
+        
     }
 }
