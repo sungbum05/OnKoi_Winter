@@ -78,9 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Nuclear
-
-'
+  m_Text: "\uB300\uD615 \uD3ED\uD0C4\n"
 --- !u!1 &5191733259421075294
 GameObject:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ public class AssaultRifle : SetGun
 
             Debug.DrawRay(this.ShootPosition.position, (this.ShootPosition.forward + RandomRay) * 30.0f, Color.red, 0.5f);
 
-            if (Physics.Raycast(this.ShootPosition.position, this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
+            if (Physics.Raycast(this.ShootPosition.position - new Vector3(0, 1.0f, 0), this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
             {
                 if (hitInfo.transform.gameObject.tag == "Enemy")
                 {

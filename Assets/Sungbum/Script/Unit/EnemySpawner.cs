@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     {
         int RanZ = 0, RanX = 0;
 
-        GameObject Enemy = Instantiate(EnemyPrefab[Random.RandomRange(0, EnemyPrefab.Count)]);
+        GameObject Enemy = Instantiate(EnemyPrefab[Random.RandomRange(0, 3)]);
 
         Enemy.transform.position = new Vector3(transform.parent.position.x + ((RanX = Random.Range(0, 2) == 0 ? -1 : 1) * Random.Range(10.0f, 16.0f)), Enemy.transform.position.y, 
             this.transform.parent.position.z + ((RanZ = Random.Range(0, 2) == 0 ? -1 : 1) * Random.Range(10.0f, 16.0f)));

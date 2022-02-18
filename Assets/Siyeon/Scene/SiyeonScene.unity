@@ -961,9 +961,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterVolumeSFX: 1
   masterVolumeBGM: 1
-  BGMClip: {fileID: 8300000, guid: 3cf203aaaac664d4ca3bd66d899b6908, type: 3}
+  BGMClip: {fileID: 0}
   audioClip:
-  - {fileID: 8300000, guid: ef3390937eb98974eb67b49558124973, type: 3}
+  - {fileID: 8300000, guid: 524dea856760d254d9ee8dda1013dec6, type: 3}
 --- !u!82 &1132631775
 AudioSource:
   m_ObjectHideFlags: 0

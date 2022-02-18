@@ -187,9 +187,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'TimeSlow
-
-'
+  m_Text: "\uB3D9\uCCB4\uC2DC\uB825 \uC99D\uAC00\n"
 --- !u!1 &7886108523406317182
 GameObject:
   m_ObjectHideFlags: 0

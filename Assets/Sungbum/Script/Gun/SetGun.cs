@@ -62,8 +62,6 @@ public class SetGun : MonoBehaviour
 
     protected virtual void SettingGun()
     {
-        BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
-
         int SecondIdx = 1;
 
         GunName = gameObject.name.Split('_');
@@ -73,26 +71,32 @@ public class SetGun : MonoBehaviour
         switch (GunNum)
         {
             case (int)GunType.Pistol:
+                BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
                 SetPistol();
                 break;
 
             case (int)GunType.ShotGun:
+                BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
                 SetShotGun();
                 break;
 
             case (int)GunType.SubmachineGun:
+                BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
                 SetSubmachineGun();
                 break;
 
             case (int)GunType.AssaultRifle:
+                BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
                 SetAssaultRifle();
                 break;
 
             case (int)GunType.H_machinegun:
+                BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
                 SetH_machinegun();
                 break;
 
             case (int)GunType.AT_Rocket:
+                BasicGun = this.transform.parent.transform.GetChild(0).gameObject;
                 SetAT_Rocket();
                 break;
 
@@ -246,7 +250,7 @@ public class SetGun : MonoBehaviour
     protected virtual void SetTurret()
     {
         Damege = 10.0f;
-        RateFire = 0.25f;
+        RateFire = 0.1f;
         BulletSpread = 0.1f;
         BulletSpeed = 210.0f;
     }

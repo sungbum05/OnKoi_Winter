@@ -11,13 +11,16 @@ public class Enemy2Controller : Unit
     [SerializeField]
     UI_Manager uI_Manager;
 
+    [SerializeField]
+    GameObject ShootPosiotion;
+
     Vector3 TargetPosition;
     ItemSpawner itemSpawner;
 
     private float RateAttack;
     private float RateTime = 0.8f;
     private float RateCurTime = 0;
-    private float BulletSpeed = 3;
+    private float BulletSpeed = 70;
 
     public GameObject Bullet;
     public float Range;
@@ -27,7 +30,6 @@ public class Enemy2Controller : Unit
     {
         Player.gameObject.GetComponent<PlayerContorller>().LevelUp();
         uI_Manager.AddScore(150 + PlusScore)/*+값 넣어주면 될듯*/;
-        bombing.Missile();
     }
 
     // Start is called before the first frame update
@@ -36,6 +38,7 @@ public class Enemy2Controller : Unit
         Player = GameObject.Find("Player");
         uI_Manager = GameObject.Find("UiManager").GetComponent<UI_Manager>();
         EnemySet();
+        SetItemSpawner();
     }
 
     // Update is called once per frame
@@ -43,20 +46,31 @@ public class Enemy2Controller : Unit
     {
         RateAttackDel();
 
+        Target();
+        transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(TargetPosition), 2.5f * Time.deltaTime);
+
         RateCurTime += Time.deltaTime;
 
         if(Vector3.Distance(transform.position,Player.transform.position) > Range)
         {
             EnemyMove();
+
+            this.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Run", true);
+            this.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", false);
         }
+
         else if(RateTime <= RateCurTime)
         {
+            this.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Run", false);
+            this.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("Idle", true);
+
             RateCurTime = 0;
             GameObject Bullet = Instantiate(this.Bullet);
             //오브젝트 위치 이동
             Bullet.transform.localScale = Vector3.one; // 스케일 조절
-            Bullet.transform.position = transform.position;
-            Bullet.GetComponent<Rigidbody>().AddForce((Player.transform.position -transform.position ) * BulletSpeed, ForceMode.Impulse); // 총알 발사
+
+            Bullet.transform.position = ShootPosiotion.transform.position;
+            Bullet.GetComponent<Rigidbody>().AddForce(ShootPosiotion.transform.forward * BulletSpeed, ForceMode.Impulse); // 총알 발사
         }
     }
 
@@ -64,21 +78,17 @@ public class Enemy2Controller : Unit
     {
         Hp = 25;
         RateAttack = RateTime;
-        MoveSpeed = 0.6f;
+        MoveSpeed = 5.0f;
     }
 
     void Target()
     {
         TargetPosition = Player.transform.position - this.transform.position;
-        //TargetPosition.Normalize();
+        TargetPosition.Normalize();
     }
 
     void EnemyMove()
     {
-        this.transform.Find("Enemy_Sprite").Rotate(270 * Time.deltaTime, 0.0f, 100 * Time.deltaTime);
-        transform.rotation = Quaternion.LookRotation(TargetPosition).normalized;
-
-        Target();
         transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
         this.GetComponent<Rigidbody>().velocity = TargetPosition * Time.deltaTime * MoveSpeed;
     }

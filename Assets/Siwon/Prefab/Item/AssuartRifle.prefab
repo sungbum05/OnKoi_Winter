@@ -179,9 +179,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'AssaultRifle
-
-'
+  m_Text: "\uB3CC\uACA9\uC18C\uCD1D\n"
 --- !u!1 &6237582144165396076
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +275,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8130022097107670951
 MonoBehaviour:
@@ -294,7 +292,7 @@ MonoBehaviour:
   HitPlayer: 0
   Itemuse: 0
   ItemPosition: {x: 0, y: 0, z: 0}
-  F: {fileID: 0}
+  F: {fileID: 7098966434250748279}
   KindGun: {fileID: 0}
 --- !u!1 &6943637606833646884
 GameObject:
@@ -313,7 +311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5441568363888092590
 RectTransform:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5534839337071184574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -174,7 +174,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-5717083372447368134
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   HitPlayer: 0
   Itemuse: 0
   ItemPosition: {x: 0, y: 0, z: 0}
-  F: {fileID: 0}
+  F: {fileID: 9112762993609065891}
   KindGun: {fileID: 0}
 --- !u!1 &8163550263086244336
 GameObject:
@@ -271,7 +271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: ShotGun
+  m_Text: "\uC0F7\uAC74\n"
 --- !u!1 &9032741095289795617
 GameObject:
   m_ObjectHideFlags: 0

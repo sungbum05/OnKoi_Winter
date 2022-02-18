@@ -54,17 +54,16 @@ public class EnemyPotarl : Unit
 
     IEnumerator EnemySpawn()
     {
-        float Scale = Random.Range(1.0f, 2.0f);
+        float Scale = Random.Range(2.5f, 3.1f);
         int RanZ = 0, RanX = 0;
 
-        GameObject Enemy = Instantiate(EnemyPrefab[Random.RandomRange(0, EnemyPrefab.Count)]);
+        GameObject Enemy = Instantiate(EnemyPrefab[Random.RandomRange(0, 2)]);
 
         Enemy.transform.localScale = new Vector3(Scale, Scale, Scale);
 
-        Enemy.transform.position = this.transform.position;
+        Enemy.transform.position = new Vector3(this.transform.position.x, Enemy.transform.position.y, this.transform.position.z);
 
-        Enemy.transform.DOMove(new Vector3(this.transform.forward.x * 2.0f, 1.5f, this.transform.forward.z * 2.0f), Random.Range(2.5f, 3.1f));
-
+        yield return new WaitForSeconds(1.5f);
         Enemy.GetComponent<Unit>().Move = true;
 
         yield return new WaitForSeconds(Random.Range(2.0f, 3.1f));

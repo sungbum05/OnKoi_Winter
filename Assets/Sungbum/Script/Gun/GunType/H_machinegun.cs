@@ -43,7 +43,7 @@ public class H_machinegun : SetGun
             PlusHeatCapacity();
             BeforeFireTime = PlusBeforeTime;
 
-            //SoundMgr.In.PlaySound("1");
+            //SoundMgr.In.PlaySound("HMG_SFX");
             MaxRateFire = RateFire;
 
             RaycastHit hitInfo;
@@ -61,7 +61,7 @@ public class H_machinegun : SetGun
 
             Destroy(Bullet, Random.Range(0.15f, 0.24f));//ÃÑ¾Ë »èÁ¦
 
-            if (Physics.Raycast(this.ShootPosition.position, this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
+            if (Physics.Raycast(this.ShootPosition.position - new Vector3(0, 1.0f, 0), this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
             {
                 if (hitInfo.transform.gameObject.tag == "Enemy")
                 {

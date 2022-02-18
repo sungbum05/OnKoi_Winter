@@ -188,9 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Turret
-
-'
+  m_Text: "\uD130\uB81B\n"
 --- !u!1 &8976281191740144444
 GameObject:
   m_ObjectHideFlags: 0

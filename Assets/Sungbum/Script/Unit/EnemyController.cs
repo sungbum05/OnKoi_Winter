@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용가능
 {
     Bombing bombing;
+
     [SerializeField]
     GameObject Player;
 
@@ -14,7 +15,7 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     Vector3 TargetPosition;
 
     private float RateAttack;
-    private float RateTime = 0.5f;
+    private float RateTime = 0.6f;
 
     private void OnDestroy()
     {
@@ -46,21 +47,29 @@ public class EnemyController : Unit // 상속해주면 unit에 있는 hp나 movespeed사용
     {
         Hp = 35;
         RateAttack = RateTime;
-        MoveSpeed = 0.8f;
+        MoveSpeed = 6.0f;
     }
 
     void Target()
     {
         TargetPosition = Player.transform.position - this.transform.position;
+        TargetPosition.Normalize();
     }
 
     void EnemyMove()
     {
-        transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(TargetPosition), 2.5f * Time.deltaTime);  
+        if (Player != null)
+        {
+            this.transform.FindChild("Enemy_Sprite").Rotate(360 * Time.deltaTime, 0.0f, 100 * Time.deltaTime);
 
-        Target();
+            transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(TargetPosition), 2.5f * Time.deltaTime);
+            Target();
+        }
+
         transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
-        this.GetComponent<Rigidbody>().velocity = TargetPosition * Time.deltaTime * MoveSpeed;
+        //Target();
+        //transform.position += TargetPosition * MoveSpeed * Time.deltaTime;
+        //this.GetComponent<Rigidbody>().velocity = TargetPosition * Time.deltaTime * MoveSpeed;
     }
 
     private void OnCollisionStay(Collision other)

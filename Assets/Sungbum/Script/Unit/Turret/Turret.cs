@@ -19,6 +19,8 @@ public class Turret : SetGun
     float LifeTime = 30.0f;
     public Transform[] ShootPosition;
 
+    public GameObject[] enemies;
+
     int ShotPosNext = 0;
 
     void Start()
@@ -27,6 +29,33 @@ public class Turret : SetGun
 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         //UpdateTarget함수를 딜레이 없이, 0.5초 마다 호출 무한 반복
+    }
+
+    void UpdateTarget()
+    {
+        Debug.Log("sad");
+        enemies = GameObject.FindGameObjectsWithTag(enemyTag); //Enemy라는 태그를 갖은 것들을 enemies[]배열에 저장
+        float shortestDistance = Mathf.Infinity; //가장 짧은 거리를 무한으로 둔다.
+        GameObject nearestEnemy = null; //가장 가까운 적을 null 로 둔다
+
+        foreach (GameObject enemy in enemies) //enemy가 enemies의 수만큼 반복
+        {
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position); //터렛과 enemy의 거리
+            if (distanceToEnemy < shortestDistance) //터렛과 enemy의 거리가 가장 짧은 거리보다 작으면 
+            {
+                shortestDistance = distanceToEnemy; //가장 짧은 거리는 터렛과enemy 거리가 되고
+                nearestEnemy = enemy; //가장 가까운 적은 enemy가됨
+            }
+
+        }
+        if (nearestEnemy != null && shortestDistance <= range) //만약 가까운 적이 없고, 가장 짧은 거리가 터렛의 범위보다 짧으면
+        {
+            target = nearestEnemy.transform; //타겟은 다시한번 가장 가까운 놈으로바뀜
+        }
+        else
+        {
+            target = null; //아니면 타겟은 없는겨
+        }
     }
 
     // Update is called once per frame
@@ -90,20 +119,7 @@ public class Turret : SetGun
             {
                 if (hitInfo.transform.gameObject.tag == "Enemy")
                 {
-                    switch (GetEnemyType(hitInfo))
-                    {
-                        case 1:
-                            hitInfo.transform.gameObject.GetComponent<EnemyController>().OnHit(Damege);
-                            break;
-
-                        case 2:
-                            hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
-                            break;
-
-                            //case 3:
-                            //    hitInfo.transform.gameObject.GetComponent<Enemy2Controller>().OnHit(Damege);
-                            //    break;
-                    }
+                    hitInfo.transform.gameObject.GetComponent<Unit>().OnHit(Damege);
 
                     GameObject Particle = Instantiate(GunParticle);
                     Particle.transform.position = hitInfo.transform.position;
@@ -119,33 +135,6 @@ public class Turret : SetGun
 
             else
                 ShotPosNext ++;
-        }
-    }
-
-    void UpdateTarget()
-    {
-
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag); //Enemy라는 태그를 갖은 것들을 enemies[]배열에 저장
-        float shortestDistance = Mathf.Infinity; //가장 짧은 거리를 무한으로 둔다.
-        GameObject nearestEnemy = null; //가장 가까운 적을 null 로 둔다
-
-        foreach (GameObject enemy in enemies) //enemy가 enemies의 수만큼 반복
-        {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position); //터렛과 enemy의 거리
-            if (distanceToEnemy < shortestDistance) //터렛과 enemy의 거리가 가장 짧은 거리보다 작으면 
-            {
-                shortestDistance = distanceToEnemy; //가장 짧은 거리는 터렛과enemy 거리가 되고
-                nearestEnemy = enemy; //가장 가까운 적은 enemy가됨
-            }
-
-        }
-        if (nearestEnemy != null && shortestDistance <= range) //만약 가까운 적이 없고, 가장 짧은 거리가 터렛의 범위보다 짧으면
-        {
-            target = nearestEnemy.transform; //타겟은 다시한번 가장 가까운 놈으로바뀜
-        }
-        else
-        {
-            target = null; //아니면 타겟은 없는겨
         }
     }
 

@@ -97,7 +97,7 @@ public class ShotGun : SetGun
 
         Destroy(Bullet, Random.Range(0.15f, 0.20f));//ÃÑ¾Ë »èÁ¦
 
-        if (Physics.Raycast(this.ShootPosition.position, this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
+        if (Physics.Raycast(this.ShootPosition.position - new Vector3(0, 1.0f, 0), this.ShootPosition.forward + RandomRay, out hitInfo, 30.0f))
         {
             if(hitInfo.transform.gameObject.tag == "Enemy")
             {

@@ -33,7 +33,7 @@ public class EnemyLaserController : Unit
         Player = GameObject.Find("Player");
         uI_Manager = GameObject.Find("UiManager").GetComponent<UI_Manager>();
         EnemySet();
-
+        SetItemSpawner();
     }
 
     // Update is called once per frame

@@ -307,9 +307,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!33 &1054243537469136157
 MeshFilter:
@@ -372,8 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f89790f08088fb49aab8f4960da27f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlusScore: 0
+  PlusScore: 150
   Move: 0
+  ItemSpawner: {fileID: 0}
   Player: {fileID: 0}
   uI_Manager: {fileID: 0}
   Bullet: {fileID: 4399571416262677520, guid: 737ef996d2e7847459bd4aa3a7f07ec6, type: 3}
@@ -490,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlusScore: 0
   Move: 0
+  ItemSpawner: {fileID: 0}
   Player: {fileID: 0}
   ShootPos: {fileID: 1923391631346903902}
   MaxDistance: 15

@@ -69,10 +69,16 @@ public class LaserCon : Unit
         {
             RateCurTime = 0;
             Laser();
-            if(Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance, LayerMask))
+            Debug.DrawRay(transform.position + new Vector3(0, 1, 0), transform.forward * 10, Color.red, 1.0f);
+            if(Physics.Raycast(transform.position + new Vector3(0, 1, 0), transform.forward, out hit, MaxDistance))
             {
-                Debug.Log("hit");
-                hit.transform.gameObject.GetComponent<PlayerContorller>().OnHit(30);
+                Debug.Log(hit.transform.gameObject.name);
+
+                if (hit.transform.gameObject.tag == "Player")
+                {
+                    Debug.Log("hit");
+                    hit.transform.gameObject.GetComponent<Unit>().OnHit(30);
+                }
             }
         }
 

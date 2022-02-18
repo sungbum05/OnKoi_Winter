@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1892655455253817298
 Transform:
   m_ObjectHideFlags: 0
@@ -453,9 +453,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &693674276
 BoxCollider:
@@ -482,8 +482,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cca592f660ed9f4188514bdf077a7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlusScore: 0
+  PlusScore: 100
   Move: 0
+  ItemSpawner: {fileID: 0}
   Player: {fileID: 0}
   EnemyExplosion: {fileID: 3602988083110670085, guid: ba6d81f86de9003439a61089c3ce8044, type: 3}
   Smoke: {fileID: 6869106469457509591}

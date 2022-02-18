@@ -32,8 +32,6 @@ public class Enemy3Controller : Unit
 
         Instantiate(EnemyExplosion, new Vector3(this.transform.position.x,
             this.transform.position.y, this.transform.position.z), Quaternion.identity);
-
-        bombing.Missile();
     }
 
     // Start is called before the first frame update
@@ -44,6 +42,7 @@ public class Enemy3Controller : Unit
         Player = GameObject.Find("Player");
         uI_Manager = GameObject.Find("UiManager").GetComponent<UI_Manager>();
         EnemySet();
+        SetItemSpawner();
     }
 
     // Update is called once per frame
