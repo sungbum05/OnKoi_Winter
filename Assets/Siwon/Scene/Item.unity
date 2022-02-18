@@ -363,6 +363,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1377695537}
     - target: {fileID: 3396857050163796048, guid: 1d42f37bbc67f7b4790a88352e5dedf0, type: 3}
+      propertyPath: KindGun
+      value: 
+      objectReference: {fileID: 674625474}
+    - target: {fileID: 3396857050163796048, guid: 1d42f37bbc67f7b4790a88352e5dedf0, type: 3}
       propertyPath: Itemname
       value: 
       objectReference: {fileID: 1377695537}
@@ -420,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237582144165396080, guid: 1d42f37bbc67f7b4790a88352e5dedf0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.4
+      value: -6.95
       objectReference: {fileID: 0}
     - target: {fileID: 6237582144165396080, guid: 1d42f37bbc67f7b4790a88352e5dedf0, type: 3}
       propertyPath: m_LocalRotation.w

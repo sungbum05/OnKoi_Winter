@@ -14,7 +14,7 @@ public class ItemSpawner : MonoBehaviour
         result.Add(RandomItem());
         if (result[0].itemObject != null)
         {
-            Instantiate(result[0].itemObject);
+            Instantiate(result[0].itemObject,this.gameObject.transform.position,Quaternion.identity);
             result.Clear();
         }
     }

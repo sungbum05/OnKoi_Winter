@@ -7,10 +7,13 @@ public class AntiTankRocket : Item
 {
     [SerializeField]
     private Text F;
+    [SerializeField]
+    GameObject KindGun;
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
+            HitPlayer = true;
             F.gameObject.SetActive(true);
         }
         if(other.tag == "Player" && Input.GetKeyDown(KeyCode.F))
@@ -29,8 +32,7 @@ public class AntiTankRocket : Item
     {
         if(HitPlayer == true && Input.GetKeyDown(KeyCode.F)) 
         {
-            Debug.Log("¾¾¹ß·Ã¾Æ");
-            gameObject.transform.FindChild("AT_Rocket_5").gameObject.SetActive(true);
+            KindGun.transform.FindChild("ATRocket_5").gameObject.SetActive(true);
             Destroy(this.gameObject);
         }
     }

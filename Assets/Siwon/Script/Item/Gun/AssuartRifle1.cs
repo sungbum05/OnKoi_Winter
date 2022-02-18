@@ -7,6 +7,13 @@ public class AssuartRifle1 : Item
 {
     [SerializeField]
     private Text F;
+    [SerializeField]
+    GameObject KindGun;
+    private void Awake()
+    {
+        //KindGun.transform.Find("Player");
+        Debug.Log("¡§¿Á«Â");
+    }
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -26,9 +33,10 @@ public class AssuartRifle1 : Item
     {
         if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
         {
-            gameObject.transform.FindChild("assaultrifle_3").gameObject.SetActive(true);
+            KindGun.transform.FindChild("assaultrifle_3").gameObject.SetActive(true);
             Destroy(this.gameObject);
 
         }
     }
+   
 }

@@ -213,6 +213,7 @@ MonoBehaviour:
   Itemuse: 0
   ItemPosition: {x: 0, y: 0, z: 0}
   F: {fileID: 5004998416055043958}
+  KindGun: {fileID: 6237582144165396076}
 --- !u!1 &9147568961063918106
 GameObject:
   m_ObjectHideFlags: 0
