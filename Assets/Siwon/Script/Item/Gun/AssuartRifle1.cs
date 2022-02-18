@@ -11,13 +11,14 @@ public class AssuartRifle1 : Item
     GameObject KindGun;
     private void Awake()
     {
-        //KindGun.transform.Find("Player");
+        KindGun = GameObject.Find("Player").transform.FindChild("KindGun").gameObject;
         Debug.Log("¡§¿Á«Â");
     }
     protected override void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            HitPlayer = true;
             F.gameObject.SetActive(true);
         }
 

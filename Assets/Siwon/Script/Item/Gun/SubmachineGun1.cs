@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SubmachineGun1 : MonoBehaviour
+public class SubmachineGun1 : Item
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Text F;
+    [SerializeField]
+    GameObject KindGun;
+    protected override void OnTriggerEnter(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            HitPlayer = true;
+            F.gameObject.SetActive(true);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    protected override void OnTriggerExit(Collider other)
     {
-        
+        if (other.tag == "Player")
+        {
+            F.gameObject.SetActive(false);
+        }
+    }
+    protected override void Update()
+    {
+        if (HitPlayer == true && Input.GetKeyDown(KeyCode.F))
+        {
+            KindGun.transform.FindChild("submachinegun_2").gameObject.SetActive(true);
+            Destroy(this.gameObject);
+        }
     }
 }

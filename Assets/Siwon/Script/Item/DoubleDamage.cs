@@ -8,17 +8,22 @@ public class DoubleDamage : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
+        if (other.tag == "Player")
         {
             Destroy(this.gameObject);
-            setGun.Damege *= 2;
+            //setGun.Damege *= 2;
             StartCoroutine(isDoubleDamageWait());
         }
         setGun.Damege /= 2;
     }
     IEnumerator isDoubleDamageWait()
     {
+        Debug.Log("DoubleDamage");
         yield return new WaitForSeconds(30f);
+    }
+    private void Start()
+    {
+       
     }
 
 
